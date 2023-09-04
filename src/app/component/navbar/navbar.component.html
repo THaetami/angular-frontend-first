@@ -14,8 +14,8 @@
       <span class="cursor-pointer block pl-3 pr-2 py-1 md:pl-2 lg:pr-4">Pricing</span>
     </li>
     <div class="md:border w-fit rounded-lg ml-0 xs:ml-3 shadow-sm justify-end md:justify-normal">
-      <button (click)="toggleSidebar()" routerLink="/" class="px-2 sm:px-4 py-1 rounded-none sm:rounded-l-lg  bg-purple-600 text-white m-0 hover:bg-orange-200">Login</button>
-      <button (click)="toggleSidebar()" routerLinkActive="aktip" routerLink="/register" class="px-2 sm:px-4 py-1 rounded-none sm:rounded-r-lg bg-neutral-50  hover:bg-orange-200">Register</button>
+      <button (click)="toggleSidebarIfOpen()" routerLink="/" class="px-2 sm:px-4 py-1 rounded-none sm:rounded-l-lg  bg-purple-600 text-white m-0 hover:bg-orange-200">Login</button>
+      <button (click)="toggleSidebarIfOpen()" routerLinkActive="aktip" routerLink="/register" class="px-2 sm:px-4 py-1 rounded-none sm:rounded-r-lg bg-neutral-50  hover:bg-orange-200">Register</button>
     </div>
     <svg (click)="toggleSidebar()"
       class="w-6 h-6 text-white block m-1 sm:hidden dark:text-white ml-2 xs:ml-6 hover:text-orange-200"

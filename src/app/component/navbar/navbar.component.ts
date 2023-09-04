@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { toggleSidebar } from '../../reducer/sidebar.action';
 
 import { AppState } from '../../reducer/app.state';
+import { filter, take } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +17,15 @@ export class NavbarComponent {
 
   toggleSidebar() {
     this.store.dispatch(toggleSidebar()); // Ubah "toogleSidebar" menjadi "toggleSidebar"
+  }
+
+   toggleSidebarIfOpen() {
+    this.sOpen$.pipe(
+      take(1), // Hanya ambil satu nilai
+      filter(isOpen => isOpen) // Hanya jalankan toggleSidebar jika isOpen$ adalah true
+    ).subscribe(() => {
+      this.store.dispatch(toggleSidebar());
+    });
   }
 
 }
