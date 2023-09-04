@@ -1,0 +1,14 @@
+<app-sidebar></app-sidebar>
+<app-navbar class="fixed w-full"></app-navbar>
+<div class=" top-0 z-50 w-full bg-white border-b p-7 border-gray-200 dark:bg-gray-800 dark:border-gray-700"></div>
+<div class="p-2 ml-[3.6rem] md:ml-[4rem]" (click)="toggleSidebarIfOpen()">
+
+  <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-0">
+    <div class="container my-5 mx-auto md:px-6">
+
+        <app-article></app-article>
+
+    </div>
+  </div>
+</div>
+<app-sidebar-auth></app-sidebar-auth>

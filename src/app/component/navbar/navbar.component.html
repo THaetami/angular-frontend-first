@@ -1,0 +1,27 @@
+<nav style="background: rgb(59,20,167);"
+  class="justify-end fixed md:relative shadow-md xs:shadow-none shadow-black md:items-center md:justify-center w-full md:flex md:w-auto md:order-1">
+  <ul class="flex justify-end font-medium flex-row mt-3 md:mt-4 mb-3 mx-1">
+    <li routerLinkActive="aktip"  class="hidden sm:block hover:bg-orange-200 hover:text-black text-white bg-transparent rounded-lg md:m-0 mt-0">
+      <a routerLink="/home" class="block pl-3 pr-2 py-1 md:pl-3  lg:pr-4" aria-current="page">Home</a>
+    </li>
+    <li routerLinkActive="aktip" class="hidden sm:block hover:bg-orange-200 hover:text-black text-white bg-transparent rounded-lg md:m-0 mt-0">
+      <a routerLink="/about" class="cursor-pointer block pl-3 pr-2 py-1 md:pl-2 lg:pr-4">About</a>
+    </li>
+    <li class="hidden sm:block hover:bg-orange-200 hover:text-black text-white bg-transparent rounded-lg md:m-0 mt-0">
+      <span class="cursor-pointer block pl-3 pr-2 py-1 md:pl-2 lg:pr-4">Services</span>
+    </li>
+    <li class="hidden lg:block hover:bg-orange-200 hover:text-black text-white bg-transparent rounded-lg md:m-0 mt-0">
+      <span class="cursor-pointer block pl-3 pr-2 py-1 md:pl-2 lg:pr-4">Pricing</span>
+    </li>
+    <div class="md:border w-fit rounded-lg ml-0 xs:ml-3 shadow-sm justify-end md:justify-normal">
+      <button (click)="toggleSidebar()" routerLink="/" class="px-2 sm:px-4 py-1 rounded-none sm:rounded-l-lg  bg-purple-600 text-white m-0 hover:bg-orange-200">Login</button>
+      <button (click)="toggleSidebar()" routerLinkActive="aktip" routerLink="/register" class="px-2 sm:px-4 py-1 rounded-none sm:rounded-r-lg bg-neutral-50  hover:bg-orange-200">Register</button>
+    </div>
+    <svg (click)="toggleSidebar()"
+      class="w-6 h-6 text-white block m-1 sm:hidden dark:text-white ml-2 xs:ml-6 hover:text-orange-200"
+      aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M1 1h15M1 7h15M1 13h15" />
+    </svg>
+  </ul>
+</nav>
