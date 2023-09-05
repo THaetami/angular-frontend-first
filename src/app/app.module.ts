@@ -16,6 +16,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { ArticleComponent } from './component/article/article.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { MessagePageComponent } from './pages/message-page/message-page.component';
+import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MessagePageComponent } from './pages/message-page/message-page.componen
     RegisterPageComponent,
     ArticleComponent,
     AboutPageComponent,
-    MessagePageComponent
+    MessagePageComponent,
+    ChatPageComponent
   ],
   imports: [
     BrowserModule,

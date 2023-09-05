@@ -1,3 +1,4 @@
+import { messages } from './../../sources/message';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { filter, take } from 'rxjs';
@@ -13,6 +14,7 @@ export class MessagePageComponent {
   constructor(private store: Store<{ sidebar: AppState }>) { }
 
   sOpen$ = this.store.select((state) => state.sidebar.isSidebar);
+  messages = [...messages];
 
 
   toggleSidebarIfOpen() {
