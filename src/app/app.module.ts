@@ -17,6 +17,9 @@ import { ArticleComponent } from './component/article/article.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { MessagePageComponent } from './pages/message-page/message-page.component';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { CardProductComponent } from './component/card-product/card-product.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -33,12 +36,15 @@ import { ChatPageComponent } from './pages/chat-page/chat-page.component';
     ArticleComponent,
     AboutPageComponent,
     MessagePageComponent,
-    ChatPageComponent
+    ChatPageComponent,
+    ProductPageComponent,
+    CardProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ sidebar: sidebarReducer }),
+    SlickCarouselModule
   ],
   providers: [
   ],

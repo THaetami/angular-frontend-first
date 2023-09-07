@@ -6,10 +6,11 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-            xs: '500px',
+          xs: '500px',
+          tab: '845px'
         }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 

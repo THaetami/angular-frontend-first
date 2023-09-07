@@ -4,6 +4,7 @@ import { toggleSidebar } from '../../reducer/sidebar.action';
 
 import { AppState } from '../../reducer/app.state';
 import { filter, take } from 'rxjs';
+import { ActivatedRoute, Route } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,10 @@ import { filter, take } from 'rxjs';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private store: Store<{ sidebar: AppState }>) {}
+  constructor(
+    private store: Store<{ sidebar: AppState }>,
+    private route: ActivatedRoute
+  ) { }
 
   sOpen$ = this.store.select((state) => state.sidebar.isSidebar);
 
@@ -19,7 +23,11 @@ export class NavbarComponent {
     this.store.dispatch(toggleSidebar()); // Ubah "toogleSidebar" menjadi "toggleSidebar"
   }
 
-   toggleSidebarIfOpen() {
+  isShow(): boolean {
+    return this.route.snapshot.routeConfig?.path !== 'product';
+  }
+
+  toggleSidebarIfOpen() {
     this.sOpen$.pipe(
       take(1), // Hanya ambil satu nilai
       filter(isOpen => isOpen) // Hanya jalankan toggleSidebar jika isOpen$ adalah true
