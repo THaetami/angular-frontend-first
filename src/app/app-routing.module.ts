@@ -7,6 +7,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { MessagePageComponent } from './pages/message-page/message-page.component';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterPageComponent },
   { path: 'about', component: AboutPageComponent },
   { path: 'product', component: ProductPageComponent },
+  { path: 'product/:id', component: DetailProductPageComponent },
   {
     path: 'message', component: MessagePageComponent,
     children: [

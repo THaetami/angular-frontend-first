@@ -20,6 +20,7 @@ import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CardProductComponent } from './component/card-product/card-product.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MessagePageComponent,
     ChatPageComponent,
     ProductPageComponent,
-    CardProductComponent
+    CardProductComponent,
+    DetailProductPageComponent
   ],
   imports: [
     BrowserModule,

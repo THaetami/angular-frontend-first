@@ -22,12 +22,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/slick-carousel/slick/slick.css",
-              "node_modules/slick-carousel/slick/slick-theme.css"
+              "node_modules/slick-carousel/slick/slick.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -36,18 +36,7 @@
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
+
               "outputHashing": "all"
             },
             "development": {

@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { filter, take } from 'rxjs';
-import { AppState } from 'src/app/reducer/app.state';
-import { toggleSidebar } from 'src/app/reducer/sidebar.action';
+import { SidebarService } from 'src/app/services/sidebar.service';
 
 @Component({
   selector: 'app-about-page',
@@ -10,17 +7,11 @@ import { toggleSidebar } from 'src/app/reducer/sidebar.action';
   styleUrls: ['./about-page.component.css']
 })
 export class AboutPageComponent {
-  constructor(private store: Store<{ sidebar: AppState }>) { }
-
-  sOpen$ = this.store.select((state) => state.sidebar.isSidebar);
-
+    constructor(
+    private sidebarService: SidebarService
+  ) { }
 
   toggleSidebarIfOpen() {
-    this.sOpen$.pipe(
-      take(1), // Hanya ambil satu nilai
-      filter(isOpen => isOpen) // Hanya jalankan toggleSidebar jika isOpen$ adalah true
-    ).subscribe(() => {
-      this.store.dispatch(toggleSidebar());
-    });
+    this.sidebarService.toggleSidebarIfOpen();
   }
 }
