@@ -3,440 +3,390 @@
 <div class=" top-0 z-50 w-full bg-white border-b p-7 border-gray-200 dark:bg-gray-800 dark:border-gray-700"></div>
 <div class="p-2 ml-[3rem] md:ml-[3.8rem] mt-2" (click)="toggleSidebarIfOpen()">
 
-  <div class="px-0 md:px-1 py-2 mt-4">
+  <div class="px-0 md:px-1 py-0 lg:py-2 mt-2 md:mt-4">
     <div class="grid md:grid-cols-2 md:flex w-full md:justify-center gap-2 lg:gap-4">
-        <div class="h-full tab:h-screen w-full md:w-[40%] lg:w-[30%]">
-          <div class="items-center justify-center flex">
-            <img height="320" width="320" class="rounded-none sm:rounded-md mb-6" [src]="currentImage" alt="Card image">
-          </div>
-          <div class="items-center justify-center flex">
-            <div class="w-80 text-sm rounded-md px-0 py-1 bg-white space-x-0">
-              <ngx-slick-carousel class="carousel rounded-md ml-3" #slickModal="slick-carousel" [config]="slideConfig">
-                <div ngxSlickItem *ngFor="let item of items" class="slide ">
-                  <img [src]="item.image" (click)="changeImage(item.image)"
-                        [class.border-purple-600]="selectedImage === item.image"
-                        class=" border-2 cursor-pointer rounded-md w-[4rem] h-[4rem]" />
-                </div>
-              </ngx-slick-carousel>
-            </div>
+      <div class="h-full tab:h-screen w-full md:w-[40%] lg:w-[30%]">
+        <div class="items-center justify-center flex">
+          <img height="320" width="320" class="rounded-none sm:rounded-md mb-6" [src]="currentImage" alt="Card image">
+        </div>
+        <div class="items-center justify-center flex">
+          <div class="w-80 text-sm rounded-md px-0 py-1 bg-white space-x-0">
+            <ngx-slick-carousel class="carousel rounded-md ml-3" #slickModal="slick-carousel" [config]="slideConfig">
+              <div ngxSlickItem *ngFor="let item of items" class="slide ">
+                <img [src]="item.image" (click)="changeImage(item.image)"
+                      [class.border-purple-600]="selectedImage === item.image"
+                      class=" border-2 cursor-pointer rounded-md w-[4rem] h-[4rem]" />
+              </div>
+            </ngx-slick-carousel>
           </div>
         </div>
+        <div  class="items-center justify-center flex lg:hidden">
+          <div class="p-1 w-80">
+            <button class="w-full rounded-md hover:bg-purple-900 mt-2 bg-purple-600 py-1.5 xs:py-2 text-white font-bold" onclick="my_modal_2.showModal()">Checkout</button>
+          </div>
+        </div>
+      </div>
 
-        <div class=" h-screen overflow-auto p-2 md:p-0 w-full md:w-[60%] lg:tab:w-[50%]">
-          <div class="font-bold text-xl md:text-3xl mb-1">Panci Listrik Serbaguna Advance C-330 Steamer dan Ricecooker</div>
-          <div class="inline-block sm:flex text-md space-x-0 text-slate-400 sm:space-x-1 mb-4">
-            <div><span class="font-semibold text-black">Terjual</span> 100+ .</div>
-            <div class="flex">
-              <svg class="w-5 h-5 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                viewBox="0 0 22 20">
+      <div class=" h-screen overflow-auto p-2 md:p-0 w-full md:w-[60%] lg:tab:w-[50%]">
+        <div class="font-bold text-xl md:text-3xl mb-1">Panci Listrik Serbaguna Advance C-330 Steamer dan Ricecooker</div>
+        <div class="inline-block sm:flex text-md space-x-0 text-slate-400 sm:space-x-1 mb-4">
+          <div><span class="font-semibold text-black">Terjual</span> 100+ .</div>
+          <div class="flex">
+            <svg class="w-5 h-5 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              viewBox="0 0 22 20">
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <p><span class="font-semibold text-black">4.5</span> (47 rating) .</p>
+          </div>
+          <p><span class="font-semibold text-black">Diskusi</span> (5)</p>
+        </div>
+        <div class="font-bold text-2xl">Rp. 130.000</div>
+        <div class="flex space-x-1 items-center mt-1">
+          <small class="bg-red-200 p-0.5 rounded">70%</small>
+          <p class="line-through font-bold">Rp. 500.000</p>
+        </div>
+
+        <!--Tabs navigation-->
+        <ul class="mb-5 mt-8 font-bold flex list-none flex-row flex-wrap border-b-0 pl-0" role="tablist" data-te-nav-ref>
+          <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
+            <div (click)="showTab(1)"
+                [class.border-b-purple-600]="selectedTab === 1" [class.text-purple-600]="selectedTab === 1"
+                class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
+                data-te-toggle="pill" data-te-target="#tabs-home02" data-te-nav-active role="tab" aria-controls="tabs-home02">
+              Detail
+            </div>
+          </li>
+          <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
+            <div (click)="showTab(2)"
+              [class.border-b-purple-600]="selectedTab === 2" [class.text-purple-600]="selectedTab === 2"
+              class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
+              data-te-toggle="pill" data-te-target="#tabs-profile02" role="tab" aria-controls="tabs-profile02">
+              Spesifikasi
+            </div>
+          </li>
+          <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
+            <div (click)="showTab(3)"
+              [class.border-b-purple-600]="selectedTab === 3" [class.text-purple-600]="selectedTab === 3"
+              class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
+              data-te-toggle="pill" data-te-target="#tabs-messages02" role="tab" aria-controls="tabs-messages02">
+              Info
+            </div>
+          </li>
+        </ul>
+
+        <!--Tabs content-->
+        <div class="mb-6">
+          <div *ngIf="selectedTab === 1" class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+            id="tabs-home02" role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
+            </p><br>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
+              voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
+            </p>
+          </div>
+          <div *ngIf="selectedTab === 2"
+            class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
+            role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
+            <div class="text-lg font-bold">Info Produk</div>
+            <div class="flex space-x-3">
+              <p>Merek :</p>
+              <p>Advance</p>
+            </div>
+          </div>
+          <div *ngIf="selectedTab === 3"
+            class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
+            role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
+            <div class="font-bold text-md">Jam Operasional pengiriman: </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
+              voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
+            </p><br>
+            <div class="font-bold text-md">Claim barang pecah: </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
+              voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
+            </p>
+          </div>
+        </div>
+        <hr class="mt-3">
+        <div class="flex mt-8 items-center font-bold space-x-4">
+          <div class="flex-shrink-0">
+            <img src="assets/image/yoona_lim.jpg" class="h-12 w-12" alt="logo">
+          </div>
+          <div class="flex-1 text-md min-w-0 p-0">
+            <p>Advance Digital Store</p>
+            <p>Online</p>
+          </div>
+          <div class="px-4 py-1 rounded-md bg-purple-300 cursor-pointer hover:bg-purple-600">
+            Follow
+          </div>
+        </div>
+        <div class="inline-block xs:flex pl-[4rem] mt-3 font-normal space-x-0 xs:space-x-2">
+          <p>4.8 rata-rata ulasan |</p>
+          <p>4 Jam pesanan diproses</p>
+        </div>
+        <hr class="mt-6">
+        <div class="text-md mt-4">
+          <div class="font-bold text-lg">Pengiriman</div>
+          <div class="flex items-center space-x-1">
+            <svg class="unf-icon" viewBox="0 0 24 24" width="18" height="18" fill="var(--color-icon-enabled, #2E3137)"
+              style="display: inline-block; vertical-align: middle;">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M9.02 2.809A7.67 7.67 0 0112 2.24 7.67 7.67 0 0119.75 10c0 7.264-6.896 11.372-7.365 11.65a.81.81 0 01-.755.01l-.015-.01C11.146 21.373 4.25 17.265 4.25 10a7.67 7.67 0 014.77-7.191zM5.75 10c0 5.58 4.85 9.18 6.25 10.11 1.4-.93 6.25-4.55 6.25-10.11A6.188 6.188 0 0012 3.74 6.19 6.19 0 005.75 10zm4.168-3.129A3.75 3.75 0 0112 6.24 3.76 3.76 0 0115.75 10a3.75 3.75 0 11-5.832-3.129zm.83 4.99a2.25 2.25 0 102.503-3.74 2.25 2.25 0 00-2.502 3.74z">
+              </path>
+            </svg>
+            <p>Dikirim dari Jakarta Utara</p>
+          </div>
+          <div class="flex items-center space-x-1">
+            <svg class="unf-icon" viewBox="0 0 24 24" width="20" height="20" fill="var(--color-icon-enabled, #2E3137)"
+              style="display: inline-block; vertical-align: middle;">
+              <path
+                d="M21.07 10.94l-2.41-2.75a2.73 2.73 0 00-2.07-.94h-2.84V7A2.75 2.75 0 0011 4.25H4A1.76 1.76 0 002.25 6v10A2.75 2.75 0 005 18.75h.53a1.9 1.9 0 000 .25 2 2 0 004 0 1.9 1.9 0 000-.25h5.06a1.896 1.896 0 000 .25 2 2 0 004 0 1.896 1.896 0 000-.25H20A1.76 1.76 0 0021.75 17v-4.25a2.75 2.75 0 00-.68-1.81zM3.75 16V6A.25.25 0 014 5.75h7A1.25 1.25 0 0112.25 7v10.25H5A1.25 1.25 0 013.75 16zm16.5 1a.25.25 0 01-.25.25h-6.25v-8.5h2.84a1.24 1.24 0 01.94.43l.94 1.07H17a.76.76 0 00-.75.75v1a.76.76 0 00.75.75h3.25V17z">
+              </path>
+            </svg>
+            <p>Ongkir Reguler 22rb - 22,8rb</p>
+          </div>
+          <p class="ml-6">Estimasi tiba 12-18 Sep</p>
+        </div>
+        <div class="flex mt-2 items-center space-x-4">
+          <div class="flex-1">
+            <div class="flex ml-6 text-md min-w-0 p-0 space-x-2">
+              <p>Kurir lainnya</p>
+              <small class="px-2 py-0.5 bg-slate-400 rounded-md">Instan</small>
+            </div>
+          </div>
+          <small class="font-bold text-purple-600 cursor-pointer">Lihat pilihan Kurir</small>
+        </div>
+        <hr class="mt-6">
+        <div class="text-md mt-4">
+          <div class="font-bold text-lg">Penawaran lainnya</div>
+          <div class="flex items-center space-x-1">
+            <img src="assets/image/pdp-paylatercicilan@3x.png" class="w-6 h-6" alt="">
+            <p>Paylater & Cicilan</p>
+          </div>
+          <p class="ml-7">Beli sekarang, bayar akhir bulan atau 30 hari lagi <small class="font-bold">Selengkapnya</small></p>
+        </div>
+        <hr class="mt-6">
+        <div class="text-md mt-4">
+          <div class="font-bold text-lg">Beli di aplikasi, makin banyak promo!</div>
+          <div class="flex items-center space-x-1">
+            <div class="flex-shrink-0">
+              <svg class="unf-icon" viewBox="0 0 24 24" width="26" height="26" fill="var(--GN500, #00AA5B)"
+                style="display: inline-block; vertical-align: middle;">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8 2.25h8A2.75 2.75 0 0118.75 5v14A2.75 2.75 0 0116 21.75H8A2.75 2.75 0 015.25 19V5A2.75 2.75 0 018 2.25zm8.884 17.634A1.25 1.25 0 0017.25 19V5A1.25 1.25 0 0016 3.75h-1A1.49 1.49 0 0113.5 5h-3A1.49 1.49 0 019 3.75H8A1.25 1.25 0 006.75 5v14A1.25 1.25 0 008 20.25h8c.331 0 .65-.132.884-.366zM11 17.25h2a.75.75 0 110 1.5h-2a.75.75 0 110-1.5z">
+                </path>
+              </svg>
+            </div>
+            <div class="flex-1 text-md min-w-0 p-0">
+              <p>Scan QR-nya untuk lihat barang ini di aplikasi Sent. Bebas ongkir, lho~</p>
+            </div>
+            <button class="px-4 py-1 rounded-md bg-purple-300 cursor-pointer hover:bg-purple-600 font-bold">Scan QR</button>
+
+          </div>
+        </div>
+        <div class="text-md mt-16">
+          <div class="w-full ">
+            <div class="font-bold text-lg">Ulasan Pembeli</div>
+            <div class="flex items-center mb-2">
+              <svg class="w-3 h-3 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
                 <path
                   d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
               </svg>
-              <p><span class="font-semibold text-black">4.5</span> (47 rating) .</p>
+              <svg class="w-3 h-3 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-3 h-3 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-3 h-3 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-3 h-3 text-gray-300 mr-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <p class="ml-2 text-sm font-medium text-gray-900 dark:text-white">4.95 out of 5</p>
             </div>
-            <p><span class="font-semibold text-black">Diskusi</span> (5)</p>
-          </div>
-          <div class="font-bold text-2xl">Rp. 130.000</div>
-          <div class="flex space-x-1 items-center mt-1">
-            <small class="bg-red-200 p-0.5 rounded">70%</small>
-            <p class="line-through font-bold">Rp. 500.000</p>
-          </div>
-
-          <!--Tabs navigation-->
-          <ul class="mb-5 mt-8 font-bold flex list-none flex-row flex-wrap border-b-0 pl-0" role="tablist" data-te-nav-ref>
-            <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
-              <div (click)="showTab(1)"
-                  [class.border-b-purple-600]="selectedTab === 1" [class.text-purple-600]="selectedTab === 1"
-                  class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
-                  data-te-toggle="pill" data-te-target="#tabs-home02" data-te-nav-active role="tab" aria-controls="tabs-home02">
-                Detail
+            <div class="flex items-center mt-1">
+              <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">5 star</a>
+              <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                <div class="h-2 bg-purple-600 rounded" style="width: 70%"></div>
               </div>
-            </li>
-            <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
-              <div (click)="showTab(2)"
-                [class.border-b-purple-600]="selectedTab === 2" [class.text-purple-600]="selectedTab === 2"
-                class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
-                data-te-toggle="pill" data-te-target="#tabs-profile02" role="tab" aria-controls="tabs-profile02">
-                Spesifikasi
-              </div>
-            </li>
-            <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
-              <div (click)="showTab(3)"
-                [class.border-b-purple-600]="selectedTab === 3" [class.text-purple-600]="selectedTab === 3"
-                class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
-                data-te-toggle="pill" data-te-target="#tabs-messages02" role="tab" aria-controls="tabs-messages02">
-                Info Penting</div>
-            </li>
-          </ul>
-
-          <!--Tabs content-->
-          <div class="mb-6">
-            <div *ngIf="selectedTab === 1" class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-              id="tabs-home02" role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
-              </p><br>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
-                voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
-              </p>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">70%</span>
             </div>
-            <div *ngIf="selectedTab === 2"
-              class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
-              role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
-              <div class="text-lg font-bold">Info Produk</div>
-              <div class="flex space-x-3">
-                <p>Merek :</p>
-                <p>Advance</p>
+            <div class="flex items-center mt-1">
+              <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">4 star</a>
+              <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                <div class="h-2 bg-purple-600 rounded" style="width: 17%"></div>
               </div>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">17%</span>
             </div>
-            <div *ngIf="selectedTab === 3"
-              class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
-              role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
-              <div class="font-bold text-md">Jam Operasional pengiriman: </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
-                voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
-              </p><br>
-              <div class="font-bold text-md">Claim barang pecah: </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
-                voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
-              </p>
+            <div class="flex items-center mt-1">
+              <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">3 star</a>
+              <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                <div class="h-2 bg-purple-600 rounded" style="width: 8%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">8%</span>
+            </div>
+            <div class="flex items-center mt-1">
+              <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">2 star</a>
+              <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                <div class="h-2 bg-purple-600 rounded" style="width: 4%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">4%</span>
+            </div>
+            <div class="flex items-center mt-1">
+              <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">1 star</a>
+              <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                <div class="h-2 bg-purple-600 rounded" style="width: 1%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">1%</span>
             </div>
           </div>
-          <hr class="mt-3">
-          <div class="flex mt-8 items-center font-bold space-x-4">
+          <div class="flex items-center mt-10 space-x-4">
             <div class="flex-shrink-0">
-              <img src="assets/image/yoona_lim.jpg" class="h-12 w-12" alt="logo">
+              <div class="font-bold text-lg">Ulasan Pilihan</div>
+              <small>Menampilkan 1 dari 1 ulasan</small>
             </div>
-            <div class="flex-1 text-md min-w-0 p-0">
-              <p>Advance Digital Store</p>
-              <p>Online</p>
+            <div class="flex-1 hidden sm:inline-block font start-end text-sm font-bold min-w-0 p-0">
+              <p class="justify-end flex ">Urutkan</p>
             </div>
-            <div class="px-4 py-1 rounded-md bg-purple-300 cursor-pointer hover:bg-purple-600">
-              Follow
-            </div>
+            <select id="countries"
+              class="bg-gray-50 cursor-pointer border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full sm:w-44 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option class="py-2 cursor-pointer" selected>Terbaru</option>
+              <option class="py-2 cursor-pointer" value="US">Rating Tertinggi</option>
+              <option class="py-2 cursor-pointer" value="CA">Rating terendah</option>
+            </select>
+
           </div>
-          <div class="inline-block xs:flex pl-[4rem] mt-3 font-normal space-x-0 xs:space-x-2">
-            <p>4.8 rata-rata ulasan |</p>
-            <p>4 Jam pesanan diproses</p>
-          </div>
-          <hr class="mt-6">
-          <div class="text-md mt-4">
-            <div class="font-bold text-lg">Pengiriman</div>
-            <div class="flex items-center space-x-1">
-              <svg class="unf-icon" viewBox="0 0 24 24" width="18" height="18" fill="var(--color-icon-enabled, #2E3137)"
-                style="display: inline-block; vertical-align: middle;">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M9.02 2.809A7.67 7.67 0 0112 2.24 7.67 7.67 0 0119.75 10c0 7.264-6.896 11.372-7.365 11.65a.81.81 0 01-.755.01l-.015-.01C11.146 21.373 4.25 17.265 4.25 10a7.67 7.67 0 014.77-7.191zM5.75 10c0 5.58 4.85 9.18 6.25 10.11 1.4-.93 6.25-4.55 6.25-10.11A6.188 6.188 0 0012 3.74 6.19 6.19 0 005.75 10zm4.168-3.129A3.75 3.75 0 0112 6.24 3.76 3.76 0 0115.75 10a3.75 3.75 0 11-5.832-3.129zm.83 4.99a2.25 2.25 0 102.503-3.74 2.25 2.25 0 00-2.502 3.74z">
-                </path>
-              </svg>
-              <p>Dikirim dari Jakarta Utara</p>
-            </div>
-            <div class="flex items-center space-x-1">
-              <svg class="unf-icon" viewBox="0 0 24 24" width="20" height="20" fill="var(--color-icon-enabled, #2E3137)"
-                style="display: inline-block; vertical-align: middle;">
-                <path
-                  d="M21.07 10.94l-2.41-2.75a2.73 2.73 0 00-2.07-.94h-2.84V7A2.75 2.75 0 0011 4.25H4A1.76 1.76 0 002.25 6v10A2.75 2.75 0 005 18.75h.53a1.9 1.9 0 000 .25 2 2 0 004 0 1.9 1.9 0 000-.25h5.06a1.896 1.896 0 000 .25 2 2 0 004 0 1.896 1.896 0 000-.25H20A1.76 1.76 0 0021.75 17v-4.25a2.75 2.75 0 00-.68-1.81zM3.75 16V6A.25.25 0 014 5.75h7A1.25 1.25 0 0112.25 7v10.25H5A1.25 1.25 0 013.75 16zm16.5 1a.25.25 0 01-.25.25h-6.25v-8.5h2.84a1.24 1.24 0 01.94.43l.94 1.07H17a.76.76 0 00-.75.75v1a.76.76 0 00.75.75h3.25V17z">
-                </path>
-              </svg>
-              <p>Ongkir Reguler 22rb - 22,8rb</p>
-            </div>
-            <p class="ml-6">Estimasi tiba 12-18 Sep</p>
-          </div>
-          <div class="flex mt-2 items-center space-x-4">
-            <div class="flex-1">
-              <div class="flex ml-6 text-md min-w-0 p-0 space-x-2">
-                <p>Kurir lainnya</p>
-                <small class="px-2 py-0.5 bg-slate-400 rounded-md">Instan</small>
+          <div class="flex items-center mt-6 space-x-4">
+            <div class="flex-shrink-0">
+              <div class="flex">
+                <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 mr-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
               </div>
             </div>
-            <small class="font-bold text-purple-600 cursor-pointer">Lihat pilihan Kurir</small>
-          </div>
-          <hr class="mt-6">
-          <div class="text-md mt-4">
-            <div class="font-bold text-lg">Penawaran lainnya</div>
-            <div class="flex items-center space-x-1">
-              <img src="assets/image/pdp-paylatercicilan@3x.png" class="w-6 h-6" alt="">
-              <p>Paylater & Cicilan</p>
+            <div class="flex-1 font text-md min-w-0 p-0">
+              <p>1 hari lalu</p>
             </div>
-            <p class="ml-7">Beli sekarang, bayar akhir bulan atau 30 hari lagi <small class="font-bold">Selengkapnya</small></p>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+              </path>
+            </svg>
+
           </div>
-          <hr class="mt-6">
-          <div class="text-md mt-4">
-            <div class="font-bold text-lg">Beli di aplikasi, makin banyak promo!</div>
-            <div class="flex items-center space-x-1">
+          <div class=" border-b-2 pb-3">
+            <div class="flex items-center mt-3 font-semibold space-x-4">
               <div class="flex-shrink-0">
-                <svg class="unf-icon" viewBox="0 0 24 24" width="26" height="26" fill="var(--GN500, #00AA5B)"
-                  style="display: inline-block; vertical-align: middle;">
+                <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="">
+              </div>
+              <div class=" font text-md min-w-0 p-0">
+                <p>Yoona</p>
+              </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur similique labore suscipit ipsam harum,
+              delectus
+              doloremque, placeat, animi ea recusandae consectetur aliquid praesentium eos corrupti hic molestias excepturi
+              nostrum
+              sequi.</p>
+            <div class="flex items-center mt-3 space-x-4">
+              <div class="flex-shrink-0  ">
+                <svg class="unf-icon cursor-pointer hover:text-purple-600" viewBox="0 0 24 24" width="18" height="18"
+                  fill="currentColor" style="display: inline-block; vertical-align: middle;">
                   <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M8 2.25h8A2.75 2.75 0 0118.75 5v14A2.75 2.75 0 0116 21.75H8A2.75 2.75 0 015.25 19V5A2.75 2.75 0 018 2.25zm8.884 17.634A1.25 1.25 0 0017.25 19V5A1.25 1.25 0 0016 3.75h-1A1.49 1.49 0 0113.5 5h-3A1.49 1.49 0 019 3.75H8A1.25 1.25 0 006.75 5v14A1.25 1.25 0 008 20.25h8c.331 0 .65-.132.884-.366zM11 17.25h2a.75.75 0 110 1.5h-2a.75.75 0 110-1.5z">
+                    d="M13.75 8.65h3.85a2.85 2.85 0 012.86 2.86 2.719 2.719 0 01-1.36 2.4l-.55 4.29a2.82 2.82 0 01-2.84 2.55h-8.7a.75.75 0 01-.75-.75v-7.4a.73.73 0 01.08-.33l2-4.15V5.21A1.76 1.76 0 019 3.84a1.7 1.7 0 011.47-.34 3.77 3.77 0 013.28 3.8v1.35zM3.473 12.463A.76.76 0 014 12.24a.76.76 0 01.75.76v6.99a.75.75 0 11-1.5 0v-7a.76.76 0 01.223-.527z">
                   </path>
                 </svg>
               </div>
-              <div class="flex-1 text-md min-w-0 p-0">
-                <p>Scan QR-nya untuk lihat barang ini di aplikasi Sent. Bebas ongkir, lho~</p>
+              <div class="flex-1 font text-md min-w-0 p-0 ">
+                <div>Membantu</div>
               </div>
-              <button class="px-4 py-1 rounded-md bg-purple-300 cursor-pointer hover:bg-purple-600 font-bold">Scan QR</button>
+              <div (click)="toggleCollapse()" class="flex ">
+                <p class="cursor-pointer hover:underline">{{ isCollapsed ? 'Lihat Balasannya' : 'Tutup Balasannya' }}</p>
+                <svg [class.rotate-0]="isCollapsed" [class.rotate-180]="!isCollapsed"
+                  class="unf-icon css-1375h5i cursor-pointer" viewBox="0 0 24 24" width="24" height="24"
+                  fill="var(--color-icon-enabled, #2E3137)" style="display: inline-block; vertical-align: middle;">
+                  <path
+                    d="M12 15.25a.74.74 0 01-.53-.22l-5-5A.75.75 0 017.53 9L12 13.44 16.47 9a.75.75 0 011.06 1l-5 5a.74.74 0 01-.53.25z">
+                  </path>
+                </svg>
+              </div>
 
             </div>
           </div>
-          <div class="text-md mt-16">
-            <div class="w-full ">
-              <div class="font-bold text-lg">Ulasan Pembeli</div>
-              <div class="flex items-center mb-2">
-                <svg class="w-3 h-3 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-3 h-3 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-3 h-3 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-3 h-3 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-3 h-3 text-gray-300 mr-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <p class="ml-2 text-sm font-medium text-gray-900 dark:text-white">4.95 out of 5</p>
-              </div>
-              <div class="flex items-center mt-1">
-                <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">5 star</a>
-                <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-                  <div class="h-2 bg-purple-600 rounded" style="width: 70%"></div>
-                </div>
-                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">70%</span>
-              </div>
-              <div class="flex items-center mt-1">
-                <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">4 star</a>
-                <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-                  <div class="h-2 bg-purple-600 rounded" style="width: 17%"></div>
-                </div>
-                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">17%</span>
-              </div>
-              <div class="flex items-center mt-1">
-                <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">3 star</a>
-                <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-                  <div class="h-2 bg-purple-600 rounded" style="width: 8%"></div>
-                </div>
-                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">8%</span>
-              </div>
-              <div class="flex items-center mt-1">
-                <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">2 star</a>
-                <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-                  <div class="h-2 bg-purple-600 rounded" style="width: 4%"></div>
-                </div>
-                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">4%</span>
-              </div>
-              <div class="flex items-center mt-1">
-                <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">1 star</a>
-                <div class="w-2/4 h-2 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-                  <div class="h-2 bg-purple-600 rounded" style="width: 1%"></div>
-                </div>
-                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">1%</span>
-              </div>
-            </div>
-            <div class="flex items-center mt-10 space-x-4">
+          <div *ngIf="!isCollapsed" class="bg-gray-300 mt-3 px-3 py-2 rounded-lg">
+            <div class="flex items-center font-semibold space-x-4">
               <div class="flex-shrink-0">
-                <div class="font-bold text-lg">Ulasan Pilihan</div>
-                <small>Menampilkan 1 dari 1 ulasan</small>
+                <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="">
               </div>
-              <div class="flex-1 hidden sm:inline-block font start-end text-sm font-bold min-w-0 p-0">
-                <p class="justify-end flex ">Urutkan</p>
-              </div>
-              <select id="countries"
-                class="bg-gray-50 cursor-pointer border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full sm:w-44 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option class="py-2 cursor-pointer" selected>Terbaru</option>
-                <option class="py-2 cursor-pointer" value="US">Rating Tertinggi</option>
-                <option class="py-2 cursor-pointer" value="CA">Rating terendah</option>
-              </select>
-
-            </div>
-            <div class="flex items-center mt-6 space-x-4">
-              <div class="flex-shrink-0">
-                <div class="flex">
-                  <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor" viewBox="0 0 22 20">
-                    <path
-                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                  <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor" viewBox="0 0 22 20">
-                    <path
-                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                  <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor" viewBox="0 0 22 20">
-                    <path
-                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                  <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor" viewBox="0 0 22 20">
-                    <path
-                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                  <svg class="w-4 h-4 text-gray-300 mr-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor" viewBox="0 0 22 20">
-                    <path
-                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                  </svg>
-                </div>
-              </div>
-              <div class="flex-1 font text-md min-w-0 p-0">
-                <p>1 hari lalu</p>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
-                </path>
-              </svg>
-
-            </div>
-            <div class=" border-b-2 pb-3">
-              <div class="flex items-center mt-3 font-semibold space-x-4">
-                <div class="flex-shrink-0">
-                  <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="">
-                </div>
-                <div class=" font text-md min-w-0 p-0">
-                  <p>Yoona</p>
-                </div>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur similique labore suscipit ipsam harum,
-                delectus
-                doloremque, placeat, animi ea recusandae consectetur aliquid praesentium eos corrupti hic molestias excepturi
-                nostrum
-                sequi.</p>
-              <div class="flex items-center mt-3 space-x-4">
-                <div class="flex-shrink-0  ">
-                  <svg class="unf-icon cursor-pointer hover:text-purple-600" viewBox="0 0 24 24" width="18" height="18"
-                    fill="currentColor" style="display: inline-block; vertical-align: middle;">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M13.75 8.65h3.85a2.85 2.85 0 012.86 2.86 2.719 2.719 0 01-1.36 2.4l-.55 4.29a2.82 2.82 0 01-2.84 2.55h-8.7a.75.75 0 01-.75-.75v-7.4a.73.73 0 01.08-.33l2-4.15V5.21A1.76 1.76 0 019 3.84a1.7 1.7 0 011.47-.34 3.77 3.77 0 013.28 3.8v1.35zM3.473 12.463A.76.76 0 014 12.24a.76.76 0 01.75.76v6.99a.75.75 0 11-1.5 0v-7a.76.76 0 01.223-.527z">
-                    </path>
-                  </svg>
-                </div>
-                <div class="flex-1 font text-md min-w-0 p-0 ">
-                  <div>Membantu</div>
-                </div>
-                <div (click)="toggleCollapse()" class="flex ">
-                  <p class="cursor-pointer hover:underline">{{ isCollapsed ? 'Lihat Balasannya' : 'Tutup Balasannya' }}</p>
-                  <svg [class.rotate-0]="isCollapsed" [class.rotate-180]="!isCollapsed"
-                    class="unf-icon css-1375h5i cursor-pointer" viewBox="0 0 24 24" width="24" height="24"
-                    fill="var(--color-icon-enabled, #2E3137)" style="display: inline-block; vertical-align: middle;">
-                    <path
-                      d="M12 15.25a.74.74 0 01-.53-.22l-5-5A.75.75 0 017.53 9L12 13.44 16.47 9a.75.75 0 011.06 1l-5 5a.74.74 0 01-.53.25z">
-                    </path>
-                  </svg>
-                </div>
-
+              <div class="inline-block xs:flex font-semibold text-sm items-center min-w-0 p-0 space-x-1">
+                <p>Advance Digital Store</p>
+                <small class="bg-purple-600 rounded-md px-1 text-white">penjual</small>
+                <p>2 Jam lalu</p>
               </div>
             </div>
-            <div *ngIf="!isCollapsed" class="bg-gray-300 mt-3 px-3 py-2 rounded-lg">
-              <div class="flex items-center font-semibold space-x-4">
-                <div class="flex-shrink-0">
-                  <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="">
-                </div>
-                <div class="inline-block xs:flex font-semibold text-sm items-center min-w-0 p-0 space-x-1">
-                  <p>Advance Digital Store</p>
-                  <small class="bg-purple-600 rounded-md px-1 text-white">penjual</small>
-                  <p>2 Jam lalu</p>
-                </div>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur similique labore suscipit ipsam harum,
-                delectus
-                doloremque, placeat, animi ea recusandae consectetur aliquid praesentium eos corrupti hic molestias excepturi
-                nostrum
-                sequi.</p>
-            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur similique labore suscipit ipsam harum,
+              delectus
+              doloremque, placeat, animi ea recusandae consectetur aliquid praesentium eos corrupti hic molestias excepturi
+              nostrum
+              sequi.</p>
           </div>
         </div>
+      </div>
 
-        <div class="hidden h-screen lg:w-[25%] lg:flex top-0 md:flex-col gap-4 ">
-          <div class="w-full px-3 py-5 border-2 rounded-box">
-            <div class="font-bold text-lg mb-6">Atur jumlah dan catatan</div>
-            <div class="flex items-center space-x-2 pb-3 border-b-2">
-              <img class="rounded-md" src="assets/image/yoona_lim.jpg" width="50" height="50" alt="imga_product">
-              <p class="semibold text-md">Brown</p>
-            </div>
-            <div class="items-center flex mt-3 space-x-1 font-semibold text-md">
-              <div class="flex items-center border-slate-300 border-2 hover:border-purple-600 rounded-md">
-                <span class="cursor-pointer rounded-l py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> -
-                </span>
-                <input class="h-8 w-8 border bg-white text-center text-xs outline-none border-none" value="0" min="1" />
-                <span class="cursor-pointer rounded-r py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> +
-                </span>
-              </div>
-              <p>Stok :</p>
-              <p class="text-orange-300">2</p>
-            </div>
-            <div class="flex items-center text-purple-600 font-bold hover:underline text-sm mt-3 cursor-pointer space-x-1">
-              <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
-                style="display: inline-block; vertical-align: middle;">
-                <path
-                  d="M21.32 5.26l-2.58-2.58a1.75 1.75 0 00-2.48 0l-12 12a1.73 1.73 0 00-.5 1l-.4 3.53a1.25 1.25 0 00.36 1c.236.23.551.358.88.36h.1l3.54-.4a1.73 1.73 0 001-.5l12-12a1.74 1.74 0 000-2.48l.08.07zM8.22 18.72a.23.23 0 01-.15.07l-3.22.36.36-3.22a.21.21 0 01.07-.15l9.22-9.22 2.94 2.94-9.22 9.22zm12-12L18.5 8.44 15.56 5.5l1.76-1.76a.24.24 0 01.36 0l2.58 2.58a.24.24 0 010 .36l-.04.04z">
-                </path>
-              </svg>
-              <p>Tambah Catatan</p>
-            </div>
-            <p class="line-through font-bold text-gray-300 text-end">Rp. 500.000</p>
-            <div class="flex items-center mt-1 space-x-4">
-              <div class="flex-1 font-semibold text-md">
-                <p>Subtotal</p>
-              </div>
-              <div  class="flex ">
-                <p class="font-bold text-lg hover:underline">Rp. 130.000</p>
-              </div>
-            </div>
-            <button class="w-full bg-purple-600 mt-3 py-2 font-bold text-white rounded-xl hover:bg-purple-800">+ Keranjang</button>
-            <button class="w-full border-bg-purple-600 border-2 mt-2 py-2 font-bold text-black rounded-xl hover:bg-slate-100">Beli Langsung</button>
-            <div class="grid grid-cols-3 text-sm mt-3 justify-items-center font-bold ">
-              <div class="flex items-center cursor-pointer">
-                <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="var(--color-icon-enabled, #2E3137)">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M3.66 21.67a.84.84 0 00.34.08.74.74 0 00.45-.15l3.8-2.85H17A3.71 3.71 0 0020.75 15V7A3.71 3.71 0 0017 3.25H7A3.71 3.71 0 003.25 7v14a.76.76 0 00.41.67zM6.13 4.907A2.2 2.2 0 017 4.75h10A2.2 2.2 0 0119.25 7v8A2.2 2.2 0 0117 17.25H8a.74.74 0 00-.45.15l-2.8 2.1V7a2.2 2.2 0 011.38-2.093zM16 9.74H8a.75.75 0 010-1.5h8a.75.75 0 110 1.5zm-3 4H8a.75.75 0 110-1.5h5a.75.75 0 110 1.5z">
-                  </path>
-                </svg>
-                <p>Chat</p>
-              </div>
-              <div class="flex items-center cursor-pointer">
-                <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" data-testid="viewWishlisted">
-                  <path
-                    d="M20.81 5.81a5.5 5.5 0 00-4.56-2.56A5.14 5.14 0 0012 5.55a5.1 5.1 0 00-4.13-2.32 5.39 5.39 0 00-4.65 2.54 6.8 6.8 0 000 7.12c1.87 3.64 5.78 6.36 7.92 7.64.271.185.592.283.92.28a1.63 1.63 0 00.89-.26c.92-.55 5.65-3.53 8-7.7a7.62 7.62 0 00-.14-7.04z">
-                  </path>
-                </svg>
-                <p>Wishlist</p>
-              </div>
-              <div class="flex items-center cursor-pointer">
-                <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="var(--color-icon-enabled, #2E3137)"
-                  style="display: inline-block; margin-right: 6px; vertical-align: middle;">
-                  <path
-                    d="M18.28 14.85a2.89 2.89 0 00-2.36 1.21l-6.69-3.53a.38.38 0 01-.1 0A2.63 2.63 0 009.1 11h.09l7-3.2a2.85 2.85 0 002.12 1 2.95 2.95 0 10-3-2.88c.02.203.057.403.11.6L8.57 9.61a.83.83 0 00-.18.13 2.95 2.95 0 00-5.06 2.12 3 3 0 003 2.88 2.94 2.94 0 002.16-1c.028.026.058.05.09.07l6.84 3.61c-.01.13-.01.26 0 .39a3 3 0 003 2.88 2.949 2.949 0 002.196-5.09 2.95 2.95 0 00-2.196-.8l-.14.05zm0-10.5a1.45 1.45 0 110 2.89 1.52 1.52 0 01-1.45-1.44 1.46 1.46 0 011.45-1.45zm-12 8.89a1.52 1.52 0 01-1.45-1.44 1.45 1.45 0 111.45 1.44zm12 6a1.52 1.52 0 01-1.45-1.44 1.45 1.45 0 111.45 1.44z">
-                  </path>
-                </svg>
-                <p>Share</p>
-              </div>
-            </div>
-          </div>
-          <div class="mt-2">
-            <img src="https://images.tokopedia.net/img/jdvdtx/2023/8/31/a92bbc2d-881b-49bc-94de-1cc057b0c682.jpg" alt="promo" width="">
-          </div>
+      <div class="hidden h-screen lg:w-[25%] lg:flex top-0 md:flex-col gap-4 ">
+        <app-checkout></app-checkout>
+        <div class="mt-2">
+          <img src="https://images.tokopedia.net/img/jdvdtx/2023/8/31/a92bbc2d-881b-49bc-94de-1cc057b0c682.jpg" alt="promo" width="">
         </div>
+      </div>
     </div>
 
   </div>
+  <dialog id="my_modal_2" class="modal lg:hidden ">
+    <div class="modal-box rounded-none xs:w-96">
+      <app-checkout></app-checkout>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
 </div>
 <app-sidebar-auth></app-sidebar-auth>

@@ -21,6 +21,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { CardProductComponent } from './component/card-product/card-product.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DetailProductPageComponent } from './pages/detail-product-page/detail-p
     ChatPageComponent,
     ProductPageComponent,
     CardProductComponent,
-    DetailProductPageComponent
+    DetailProductPageComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

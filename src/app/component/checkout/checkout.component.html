@@ -1,0 +1,67 @@
+<div class="w-full px-3 py-5 border-2 rounded-none lg:rounded-box">
+  <div class="font-bold text-lg mb-6">Atur jumlah dan catatan</div>
+  <div class="flex items-center space-x-2 pb-3 border-b-2">
+    <img class="rounded-md" src="assets/image/yoona_lim.jpg" width="50" height="50" alt="imga_product">
+    <p class="semibold text-md">Brown</p>
+  </div>
+  <div class="items-center flex mt-3 space-x-1 font-semibold text-md">
+    <div class="flex items-center border-slate-300 border-2 hover:border-purple-600 rounded-md">
+      <span class="cursor-pointer rounded-l py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> -
+      </span>
+      <input class="h-8 w-8 border bg-white text-center text-xs outline-none border-none" value="0" min="1" />
+      <span class="cursor-pointer rounded-r py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> +
+      </span>
+    </div>
+    <p>Stok :</p>
+    <p class="text-orange-300">2</p>
+  </div>
+  <div class="flex items-center text-purple-600 font-bold hover:underline text-sm mt-3 cursor-pointer space-x-1">
+    <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+      style="display: inline-block; vertical-align: middle;">
+      <path
+        d="M21.32 5.26l-2.58-2.58a1.75 1.75 0 00-2.48 0l-12 12a1.73 1.73 0 00-.5 1l-.4 3.53a1.25 1.25 0 00.36 1c.236.23.551.358.88.36h.1l3.54-.4a1.73 1.73 0 001-.5l12-12a1.74 1.74 0 000-2.48l.08.07zM8.22 18.72a.23.23 0 01-.15.07l-3.22.36.36-3.22a.21.21 0 01.07-.15l9.22-9.22 2.94 2.94-9.22 9.22zm12-12L18.5 8.44 15.56 5.5l1.76-1.76a.24.24 0 01.36 0l2.58 2.58a.24.24 0 010 .36l-.04.04z">
+      </path>
+    </svg>
+    <p>Tambah Catatan</p>
+  </div>
+  <p class="line-through font-bold text-gray-300 text-end">Rp. 500.000</p>
+  <div class="flex items-center mt-1 space-x-4">
+    <div class="flex-1 font-semibold text-md">
+      <p>Subtotal</p>
+    </div>
+    <div class="flex ">
+      <p class="font-bold text-lg hover:underline">Rp. 130.000</p>
+    </div>
+  </div>
+  <button class="w-full bg-purple-600 mt-3 py-2 font-bold text-white rounded-xl hover:bg-purple-800">+
+    Keranjang</button>
+  <button class="w-full border-bg-purple-600 border-2 mt-2 py-2 font-bold text-black rounded-xl hover:bg-slate-100">Beli
+    Langsung</button>
+  <div class="grid grid-cols-3 text-sm mt-3 justify-items-center font-bold ">
+    <div class="flex items-center cursor-pointer">
+      <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="var(--color-icon-enabled, #2E3137)">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M3.66 21.67a.84.84 0 00.34.08.74.74 0 00.45-.15l3.8-2.85H17A3.71 3.71 0 0020.75 15V7A3.71 3.71 0 0017 3.25H7A3.71 3.71 0 003.25 7v14a.76.76 0 00.41.67zM6.13 4.907A2.2 2.2 0 017 4.75h10A2.2 2.2 0 0119.25 7v8A2.2 2.2 0 0117 17.25H8a.74.74 0 00-.45.15l-2.8 2.1V7a2.2 2.2 0 011.38-2.093zM16 9.74H8a.75.75 0 010-1.5h8a.75.75 0 110 1.5zm-3 4H8a.75.75 0 110-1.5h5a.75.75 0 110 1.5z">
+        </path>
+      </svg>
+      <p>Chat</p>
+    </div>
+    <div class="flex items-center cursor-pointer">
+      <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" data-testid="viewWishlisted">
+        <path
+          d="M20.81 5.81a5.5 5.5 0 00-4.56-2.56A5.14 5.14 0 0012 5.55a5.1 5.1 0 00-4.13-2.32 5.39 5.39 0 00-4.65 2.54 6.8 6.8 0 000 7.12c1.87 3.64 5.78 6.36 7.92 7.64.271.185.592.283.92.28a1.63 1.63 0 00.89-.26c.92-.55 5.65-3.53 8-7.7a7.62 7.62 0 00-.14-7.04z">
+        </path>
+      </svg>
+      <p>Wishlist</p>
+    </div>
+    <div class="flex items-center cursor-pointer">
+      <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="var(--color-icon-enabled, #2E3137)"
+        style="display: inline-block; margin-right: 6px; vertical-align: middle;">
+        <path
+          d="M18.28 14.85a2.89 2.89 0 00-2.36 1.21l-6.69-3.53a.38.38 0 01-.1 0A2.63 2.63 0 009.1 11h.09l7-3.2a2.85 2.85 0 002.12 1 2.95 2.95 0 10-3-2.88c.02.203.057.403.11.6L8.57 9.61a.83.83 0 00-.18.13 2.95 2.95 0 00-5.06 2.12 3 3 0 003 2.88 2.94 2.94 0 002.16-1c.028.026.058.05.09.07l6.84 3.61c-.01.13-.01.26 0 .39a3 3 0 003 2.88 2.949 2.949 0 002.196-5.09 2.95 2.95 0 00-2.196-.8l-.14.05zm0-10.5a1.45 1.45 0 110 2.89 1.52 1.52 0 01-1.45-1.44 1.46 1.46 0 011.45-1.45zm-12 8.89a1.52 1.52 0 01-1.45-1.44 1.45 1.45 0 111.45 1.44zm12 6a1.52 1.52 0 01-1.45-1.44 1.45 1.45 0 111.45 1.44z">
+        </path>
+      </svg>
+      <p>Share</p>
+    </div>
+  </div>
+</div>
