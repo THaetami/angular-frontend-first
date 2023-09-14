@@ -1,0 +1,137 @@
+<app-sidebar></app-sidebar>
+<app-navbar class="fixed w-full shadow-black shadow-md" style="background: rgb(59,20,167);"></app-navbar>
+<div class=" top-0 z-50 w-full bg-white border-b p-7 border-gray-200 dark:bg-gray-800 dark:border-gray-700"></div>
+<div class="p-2 ml-[3rem] md:ml-[3.8rem] mt-2" (click)="toggleSidebarIfOpen()">
+
+  <div class="px-2 lg:px-6 py-0 lg:py-2 mt-2 md:mt-4">
+    <div class="container mx-auto">
+      <div class="grid md:grid-cols-2 md:flex w-full md:justify-center gap-3 lg:gap-4">
+        <div class="h-full  w-full md:w-[60%] lg:w-[70%]">
+          <div class="flex items-center space-x-0 xs:space-x-4 border-b-4">
+            <div class="flex-shrink-0 mb-2">
+              <p class="text-xl font-bold">Keranjang</p>
+              <div class="flex mt-0 py-2 text-md items-center space-x-2 ">
+                <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
+                <p>Pilih Semua</p>
+              </div>
+            </div>
+            <div class="flex-1 font start-end text-sm min-w-0 p-0">
+
+            </div>
+            <div (click)="goBack()" class="p-0 rounded-full hover:bg-slate-200" title="back">
+              <svg xmlns="http://www.w3.org/2000/svg" class="rotate-180 cursor-pointer w-12 h-12 md:w-16 md:h-16" viewBox="0 0 40 40">
+                <g fill="none" >
+                  <circle cx="24" cy="24" r="24"></circle>
+                  <path stroke="#6c727c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                    d="M16.53 27.47l7.202-7.202m-7.202-7.2l7.202 7.203"></path>
+                </g>
+              </svg>
+            </div>
+
+          </div>
+
+          <div class="md:h-screen md:overflow-auto">
+            <div *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+              <div class="mt-2 py-4 border-b-4 mr-3">
+                <div class= "items-center flex space-x-2">
+                  <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
+                  <div class="flex space-x-2 items-center xs:items-start">
+                    <img src="assets/image/yoona_lim.jpg" alt="product_image" class="rounded-lg" width="69" height="69">
+                    <div class="items-start">
+                      <p class="cursor-pointer">
+                        Panci Listrik Serbaguna Advance C-330 Steamer dan Ricecooker
+                      </p>
+                      <p class="font-bold">Rp. 130.000</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="ml-7 mt-3">
+                  <div class="inline-block xs:flex items-center space-x-0 xs:space-x-4">
+                    <div class="flex-shrink-0">
+                      <p class="text-purple-600 text-sm font-semibold cursor-pointer">Tulis Catatan</p>
+                    </div>
+                    <div class="flex-1 font start-end text-sm min-w-0 p-0">
+                      <div class="justify-center flex space-x-2 items-center text-slate-400">
+                        <p class=" justify-end cursor-pointer">Pindahkan ke Wishlist</p>
+                        <p>|</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M20 5.09h-4.95v-.1A3.025 3.025 0 1 0 9 5v.1H4a1 1 0 0 0 0 2h1v13A1.84 1.84 0 0 0 6.92 22h10.16A1.9 1.9 0 0 0 19 20.09V7.1h1a1 1 0 1 0 0-2v-.01zM11 5a1 1 0 0 1 2 0v.1h-2V5zM7 20V7.1h10V20H7zm3-2a1 1 0 0 0 1-1v-6.9a1 1 0 0 0-2 0V17a1 1 0 0 0 1 1zm4.767-.293A1 1 0 0 1 13.06 17v-6.9a1 1 0 1 1 2 0V17a1 1 0 0 1-.293.707z"
+                            fill="#8D96AA" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="flex items-center">
+                      <svg width="20" height="20" class="cursor-pointer" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M4.4443 18.3147C6.08879 19.4135 8.02219 20 10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 8.02219 19.4135 6.08879 18.3147 4.4443C17.2159 2.79981 15.6541 1.51809 13.8268 0.761209C11.9996 0.00433283 9.98891 -0.193701 8.0491 0.192152C6.10929 0.578004 4.32746 1.53041 2.92894 2.92894C1.53041 4.32746 0.578004 6.10929 0.192152 8.0491C-0.1937 9.98891 0.00433283 11.9996 0.761209 13.8268C1.51809 15.6541 2.79981 17.2159 4.4443 18.3147ZM5.55544 3.34825C6.87103 2.4692 8.41775 2 10 2C12.1217 2 14.1566 2.84286 15.6569 4.34315C17.1571 5.84344 18 7.87827 18 10C18 11.5823 17.5308 13.129 16.6518 14.4446C15.7727 15.7602 14.5233 16.7855 13.0615 17.391C11.5997 17.9965 9.99113 18.155 8.43928 17.8463C6.88743 17.5376 5.46197 16.7757 4.34315 15.6569C3.22433 14.538 2.4624 13.1126 2.15372 11.5607C1.84504 10.0089 2.00347 8.40035 2.60897 6.93854C3.21447 5.47673 4.23985 4.2273 5.55544 3.34825ZM6 11H14C14.2652 11 14.5196 10.8946 14.7071 10.7071C14.8946 10.5196 15 10.2652 15 10C15 9.73478 14.8946 9.48043 14.7071 9.29289C14.5196 9.10536 14.2652 9 14 9H6C5.73478 9 5.48043 9.10536 5.29289 9.29289C5.10536 9.48043 5 9.73478 5 10C5 10.2652 5.10536 10.5196 5.29289 10.7071C5.48043 10.8946 5.73478 11 6 11Z"
+                          fill="var(--NN300, #BFC9D9)"></path>
+                      </svg>
+                      <input _ngcontent-ng-c2985146161="" value="0" min="1"
+                        class="h-8 w-8 border bg-white text-center text-xs outline-none border-none">
+                      <svg width="20" height="20" viewBox="0 0 20 20" class="text-purple-600 cursor-pointer" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M4.4443 18.3147C6.08879 19.4135 8.02219 20 10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 8.02219 19.4135 6.08879 18.3147 4.4443C17.2159 2.79981 15.6541 1.51809 13.8268 0.761209C11.9996 0.00433283 9.98891 -0.193701 8.0491 0.192152C6.10929 0.578004 4.32746 1.53041 2.92894 2.92894C1.53041 4.32746 0.578004 6.10929 0.192152 8.0491C-0.1937 9.98891 0.00433283 11.9996 0.761209 13.8268C1.51809 15.6541 2.79981 17.2159 4.4443 18.3147ZM5.55544 3.34825C6.87103 2.4692 8.41775 2 10 2C12.1217 2 14.1566 2.84286 15.6569 4.34315C17.1571 5.84344 18 7.87827 18 10C18 11.5823 17.5308 13.129 16.6518 14.4446C15.7727 15.7602 14.5233 16.7855 13.0615 17.391C11.5997 17.9965 9.99113 18.155 8.43928 17.8463C6.88743 17.5376 5.46197 16.7757 4.34315 15.6569C3.22433 14.538 2.4624 13.1126 2.15372 11.5607C1.84504 10.0089 2.00347 8.40035 2.60897 6.93854C3.21447 5.47673 4.23985 4.2273 5.55544 3.34825ZM11 9H14C14.2652 9 14.5196 9.10536 14.7071 9.29289C14.8946 9.48043 15 9.73478 15 10C15 10.2652 14.8946 10.5196 14.7071 10.7071C14.5196 10.8946 14.2652 11 14 11H11V14C11 14.2652 10.8946 14.5196 10.7071 14.7071C10.5196 14.8946 10.2652 15 10 15C9.73478 15 9.48043 14.8946 9.29289 14.7071C9.10536 14.5196 9 14.2652 9 14V11H6C5.73478 11 5.48043 10.8946 5.29289 10.7071C5.10536 10.5196 5 10.2652 5 10C5 9.73478 5.10536 9.48043 5.29289 9.29289C5.48043 9.10536 5.73478 9 6 9H9V6C9 5.73478 9.10536 5.48043 9.29289 5.29289C9.48043 5.10536 9.73478 5 10 5C10.2652 5 10.5196 5.10536 10.7071 5.29289C10.8946 5.48043 11 5.73478 11 6V9Z"
+                          fill="currentColor"></path>
+                      </svg>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="h-full md:h-screen w-full md:w-[40%] lg:w-[30%] font-bold mx-auto mt-4 md:mt-0 kontener">
+          <div class="border-2 shadow-sm p-3 rounded-t-box text-md">
+            <div class="flex items-center space-x-4 border-2 rounded-box p-1 mb-2">
+              <div class="flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.272 4.046A.65.65 0 0 0 12 4a.73.73 0 0 0-.57.21l-.8.7A5.41 5.41 0 0 1 7.94 6l-1.1.3a.68.68 0 0 0-.7.7L6 8.07a4.66 4.66 0 0 1-1 2.69l-.7.79a.67.67 0 0 0 0 1l.7.79A5 5 0 0 1 6 16l.1 1.12a.68.68 0 0 0 .7.7l1.2.1A4.63 4.63 0 0 1 10.73 19l.8.7a.72.72 0 0 0 1 0l.8-.7a5.37 5.37 0 0 1 2.68-1.08l1.1-.1a.68.68 0 0 0 .69-.7l.1-1.29a4.61 4.61 0 0 1 1.1-2.69l.7-.79a.67.67 0 0 0 0-1l-.7-.79a5.33 5.33 0 0 1-1.11-2.67l-.1-1.09a.68.68 0 0 0-.69-.7L16 6a4.61 4.61 0 0 1-2.7-1.1l-.8-.7a.65.65 0 0 0-.228-.154zM10.2 2.7A2.57 2.57 0 0 1 12 2a2.7 2.7 0 0 1 1.82.7l.8.59a2.57 2.57 0 0 0 1.6.7l1 .1a2.87 2.87 0 0 1 2.59 2.59l.1 1.09a2.87 2.87 0 0 0 .7 1.59l.7.8a2.73 2.73 0 0 1 0 3.58l-.7.8a2.53 2.53 0 0 0-.7 1.59l-.1 1.09a2.87 2.87 0 0 1-2.59 2.59l-1.1.1a2.93 2.93 0 0 0-1.6.7l-.8.69a2.53 2.53 0 0 1-1.79.7 3.12 3.12 0 0 1-1.8-.7l-.79-.69a2.57 2.57 0 0 0-1.6-.7l-1-.1a2.87 2.87 0 0 1-2.59-2.59l-.1-1.09a2.9 2.9 0 0 0-.7-1.59l-.7-.8a2.71 2.71 0 0 1 0-3.58l.7-.8a2.53 2.53 0 0 0 .7-1.59l.1-1.09a2.78 2.78 0 0 1 2.46-2.59l1.1-.1a2.27 2.27 0 0 0 1.6-.6l.89-.69zM8 14.54l6.42-6.37a.82.82 0 0 1 1.16.1.81.81 0 0 1 .1 1.19L9.3 15.83a1.42 1.42 0 0 1-.6.2.858.858 0 0 1-.6-.3.81.81 0 0 1-.1-1.19zm6.42-1.3a1.4 1.4 0 1 0 1.4 1.4 1.308 1.308 0 0 0-1.4-1.4zm-4.302-2.476A1.4 1.4 0 0 1 9.34 11a1.36 1.36 0 0 1-1.4-1.4 1.4 1.4 0 1 1 2.178 1.164z"
+                    fill="#00AA5B" />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0 p-0">
+                <p>Makin hemat pakai promo</p>
+                <p class="font-normal text-sm">Pilih barang dulu sebelum pakai promo</p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                <g fill="none" fill-rule="evenodd">
+                  <circle cx="24" cy="24" r="24" />
+                  <path stroke="#6c727c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                    d="M16.53 27.47l7.202-7.202m-7.202-7.2l7.202 7.203" />
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="border-2 shadow-sm p-4 rounded-b-box text-md">
+            <p>Ringkasan belanja</p>
+            <div class="flex items-center space-x-4 font-semibold text-gray-400 mt-2">
+              <div class="flex-shrink-0">
+                <p>Total Harga</p>
+              </div>
+              <div class="flex-1 min-w-0 p-0">
+                <p>(0 barang)</p>
+              </div>
+              <p>Rp0</p>
+            </div>
+            <hr class="my-3 bottom-2">
+            <div class="flex items-center space-x-4 mt-2">
+              <div class="flex-1">
+                <p>Total Harga</p>
+              </div>
+              <p>-</p>
+            </div>
+            <div class="flex justify-center mt-3">
+              <button class="py-3 bg-slate-200 hover:bg-purple-600 hover:text-white w-full rounded-box">Beli</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<app-sidebar-auth></app-sidebar-auth>
+

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { SidebarService } from 'src/app/services/sidebar.service';
-import { messages } from 'src/app/sources/message';
 import { faker } from '@faker-js/faker';
 
 @Component({
@@ -16,7 +14,6 @@ export class DetailProductPageComponent {
   isCollapsed: boolean = true;
 
   constructor(
-    private sidebarService: SidebarService,
   ) {
 
     for (let i = 1; i <= 10; i++) {
@@ -32,10 +29,6 @@ export class DetailProductPageComponent {
     if (this.items.length > 0) {
       this.currentImage = this.items[0].image;
     }
-  }
-
-  toggleSidebarIfOpen() {
-    this.sidebarService.toggleSidebarIfOpen();
   }
 
   slideConfig = {

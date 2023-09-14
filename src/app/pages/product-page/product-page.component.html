@@ -1,9 +1,10 @@
 <app-navbar class="top-0 z-50 w-full fixed shadow-black shadow-md" style="background: rgb(59,20,167);"></app-navbar>
 
 
-<!-- <div class=" top-0 z-50 w-full fixed border-b p-7 border-gray-200 dark:bg-gray-800 dark:border-gray-700" style="background: rgb(59,20,167);"></div> -->
-<div class="pl-1 pr-0.5 ml-[2.8rem] xs:ml-[2.8rem] md:ml-[3.6rem] mt-1 md:mt-[3rem]" (click)="toggleSidebarIfOpen()">
-  <app-card-product></app-card-product>
+<div class="lg:container mx-auto">
+  <div class="pl-1 pr-0.5 ml-[2.8rem] xs:ml-[2.8rem] md:ml-[3.6rem] mt-1 md:mt-[3rem]" (click)="toggleSidebarIfOpen()">
+    <app-card-product></app-card-product>
+  </div>
 </div>
 <app-sidebar-auth></app-sidebar-auth>
 

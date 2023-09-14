@@ -1,14 +1,22 @@
-.title-product {
-  margin: 0px 0px 4px px;
-  font-weight: 800;
-  font-size: 1.28571rem;
-  line-height: 24px;
-  color: var(--NN950, #212121);
-  word-break: break-word;
-}
-.info-product {
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  margin-bottom: 16px;
+@media (min-width: 768px) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 3px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: white;
+  }
 }

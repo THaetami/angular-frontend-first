@@ -22,6 +22,8 @@ import { CardProductComponent } from './component/card-product/card-product.comp
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { ChartCustomerReviewComponent } from './component/chart-customer-review/chart-customer-review.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { CheckoutComponent } from './component/checkout/checkout.component';
     ProductPageComponent,
     CardProductComponent,
     DetailProductPageComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CartPageComponent,
+    ChartCustomerReviewComponent
   ],
   imports: [
     BrowserModule,

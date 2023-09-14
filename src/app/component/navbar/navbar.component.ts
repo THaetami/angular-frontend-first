@@ -24,7 +24,8 @@ export class NavbarComponent {
   }
 
   isShow(): boolean {
-    return this.route.snapshot.routeConfig?.path !== 'product';
+    const routePath = this.route.snapshot.routeConfig?.path;
+    return routePath !== 'product' && routePath !== 'product/:id';
   }
 
   toggleSidebarIfOpen() {

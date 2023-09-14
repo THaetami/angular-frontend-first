@@ -1,0 +1,23 @@
+.kontener {
+  width: 100%;
+}
+@media (min-width: 470px) {
+  .kontener {
+    max-width: 340px;
+  }
+}
+@media (min-width: 640px) {
+  .kontener {
+    max-width: 340px;
+  }
+}
+@media (min-width: 768px) {
+  .kontener {
+    max-width: 340px;
+  }
+}
+@media (min-width: 900px) {
+  .kontener {
+    max-width: 340px;
+  }
+}
