@@ -1,6 +1,8 @@
 import { messages } from './../../sources/message';
 import { Component } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-message-page',
@@ -9,12 +11,18 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 })
 export class MessagePageComponent {
   constructor(
-    private sidebarService: SidebarService
+    private sidebarService: SidebarService,
+    private route: ActivatedRoute
   ) { }
 
   messages = [...messages];
 
   toggleSidebarIfOpen() {
     this.sidebarService.toggleSidebarIfOpen();
+  }
+
+  isShow(): boolean {
+    const routePath = this.route.snapshot.routeConfig?.path;
+    return routePath !== 'message/:username';
   }
 }

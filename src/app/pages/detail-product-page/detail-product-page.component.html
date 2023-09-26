@@ -14,7 +14,7 @@
               <div ngxSlickItem *ngFor="let item of items" class="slide ">
                 <img [src]="item.image" (click)="changeImage(item.image)"
                       [class.border-purple-600]="selectedImage === item.image"
-                      class=" border-2 cursor-pointer rounded-md w-[4rem] h-[4rem]" />
+                      class=" border-2 cursor-pointer rounded-md w-[4rem] h-[4rem]" alt="image_product"/>
               </div>
             </ngx-slick-carousel>
           </div>
@@ -27,7 +27,7 @@
 
       <div class=" h-screen overflow-auto w-full md:w-[60%] lg:tab:w-[47%] p-1">
         <div class="font-bold text-xl md:text-3xl mb-1">Panci Listrik Serbaguna Advance C-330 Steamer dan Ricecooker</div>
-        <div class="inline-block sm:flex text-md space-x-0 text-slate-400 sm:space-x-1 mb-4">
+        <div class="inline-block sm:flex text-md space-x-0 text-slate-700 sm:space-x-1 mb-4">
           <div><span class="font-semibold text-black">Terjual</span> 100+ .</div>
           <div class="flex">
             <svg class="w-5 h-5 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -50,7 +50,7 @@
             <div (click)="showTab(1)"
                 [class.border-b-purple-600]="selectedTab === 1" [class.text-purple-600]="selectedTab === 1"
                 class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
-                data-te-toggle="pill" data-te-target="#tabs-home02" data-te-nav-active role="tab" aria-controls="tabs-home02">
+                data-te-toggle="pill" data-te-target="#tabs-home02" data-te-nav-active role="tab">
               Detail
             </div>
           </li>
@@ -58,7 +58,7 @@
             <div (click)="showTab(2)"
               [class.border-b-purple-600]="selectedTab === 2" [class.text-purple-600]="selectedTab === 2"
               class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
-              data-te-toggle="pill" data-te-target="#tabs-profile02" role="tab" aria-controls="tabs-profile02">
+              data-te-toggle="pill" data-te-target="#tabs-profile02" role="tab">
               Spesifikasi
             </div>
           </li>
@@ -66,7 +66,7 @@
             <div (click)="showTab(3)"
               [class.border-b-purple-600]="selectedTab === 3" [class.text-purple-600]="selectedTab === 3"
               class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
-              data-te-toggle="pill" data-te-target="#tabs-messages02" role="tab" aria-controls="tabs-messages02">
+              data-te-toggle="pill" data-te-target="#tabs-messages02" role="tab">
               Info
             </div>
           </li>
@@ -74,7 +74,7 @@
 
         <div class="mb-6">
           <div *ngIf="selectedTab === 1" class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-            id="tabs-home02" role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
+            id="tabs-home02" role="tabpanel" data-te-tab-active>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
             </p><br>
@@ -85,7 +85,7 @@
           </div>
           <div *ngIf="selectedTab === 2"
             class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
-            role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
+            role="tabpanel" data-te-tab-active>
             <div class="text-lg font-bold">Info Produk</div>
             <div class="flex space-x-3">
               <p>Merek :</p>
@@ -94,7 +94,7 @@
           </div>
           <div *ngIf="selectedTab === 3"
             class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
-            role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
+            role="tabpanel" data-te-tab-active>
             <div class="font-bold text-md">Jam Operasional pengiriman: </div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
@@ -160,7 +160,7 @@
         <div class="text-md mt-4">
           <div class="font-bold text-lg">Penawaran lainnya</div>
           <div class="flex items-center space-x-1">
-            <img src="assets/image/pdp-paylatercicilan@3x.png" class="w-6 h-6" alt="">
+            <img src="assets/image/pdp-paylatercicilan@3x.png" class="w-6 h-6" alt="paylater">
             <p>Paylater & Cicilan</p>
           </div>
           <p class="ml-7">Beli sekarang, bayar akhir bulan atau 30 hari lagi <small class="font-bold">Selengkapnya</small></p>
@@ -194,7 +194,7 @@
             <div class="flex-1 hidden sm:inline-block font start-end text-sm font-bold min-w-0 p-0">
               <p class="justify-end flex ">Urutkan</p>
             </div>
-            <select id="countries"
+            <select aria-label="rating" id="rating"
               class="bg-gray-50 cursor-pointer border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full sm:w-44 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               <option class="py-2 cursor-pointer" selected>Terbaru</option>
               <option class="py-2 cursor-pointer" value="US">Rating Tertinggi</option>
@@ -246,7 +246,7 @@
           <div class=" border-b-2 pb-3">
             <div class="flex items-center mt-3 font-semibold space-x-4">
               <div class="flex-shrink-0">
-                <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="">
+                <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="avatar">
               </div>
               <div class=" font text-md min-w-0 p-0">
                 <p>Yoona</p>
@@ -285,7 +285,7 @@
           <div *ngIf="!isCollapsed" class="bg-gray-300 mt-3 px-3 py-2 rounded-lg">
             <div class="flex items-center font-semibold space-x-4">
               <div class="flex-shrink-0">
-                <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="">
+                <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="avatar">
               </div>
               <div class="inline-block xs:flex font-semibold text-sm items-center min-w-0 p-0 space-x-1">
                 <p>Advance Digital Store</p>
@@ -305,7 +305,7 @@
       <div class="hidden h-screen lg:w-[27%] lg:flex top-0 md:flex-col gap-4">
         <app-checkout></app-checkout>
         <div class="mt-2">
-          <img src="https://images.tokopedia.net/img/jdvdtx/2023/8/31/a92bbc2d-881b-49bc-94de-1cc057b0c682.jpg" alt="promo" width="">
+          <img src="https://images.tokopedia.net/img/jdvdtx/2023/8/31/a92bbc2d-881b-49bc-94de-1cc057b0c682.jpg" alt="promo" width="372" height="124">
         </div>
       </div>
     </div>

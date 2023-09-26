@@ -1,9 +1,8 @@
 <div *ngFor="let article of articles">
   <div class="mb-10 flex flex-wrap">
     <div class="mb-6 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-6/12 lg:pr-6">
-      <div class="ripple  overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat shadow-lg dark:shadow-black/20"
-        data-te-ripple-init data-te-ripple-color="light">
-        <img [src]="article.image" class="w-full" alt="Louvre" />
+      <div class=" overflow-hidden">
+        <img [src]="article.image" class=" rounded-md" alt="Louvre" width="550" height="370" />
         <span class="cursor-pointer">
           <div
             class=" top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
@@ -12,7 +11,7 @@
       </div>
     </div>
 
-    <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:pl-6">
+    <div class=" w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:pl-6">
       <h3 class="mb-4 text-2xl font-bold">{{ article.title }}</h3>
       <div class="mb-4 flex items-center text-sm font-medium text-danger dark:text-danger-500">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -26,7 +25,7 @@
         Published <u>{{ article.created_at }}</u> by
         <span class="cursor-pointer">{{ article.owner}}</span>
       </p>
-      <p class="mb-6 text-neutral-500 dark:text-neutral-300">
+      <p class=" mb-6 text-neutral-500 dark:text-neutral-300">
         {{ article.description }}
       </p>
 

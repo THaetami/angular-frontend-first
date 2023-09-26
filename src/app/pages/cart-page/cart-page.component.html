@@ -11,7 +11,7 @@
             <div class="flex-shrink-0 mb-2">
               <p class="text-xl font-bold">Keranjang</p>
               <div class="flex mt-0 py-2 text-md items-center space-x-2 ">
-                <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
+                <input aria-label="checked all" type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
                 <p>Pilih Semua</p>
               </div>
             </div>
@@ -34,7 +34,7 @@
             <div *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
               <div class="mt-2 py-4 border-b-4 mr-3">
                 <div class= "items-center flex space-x-2">
-                  <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
+                  <input aria-label="checked product" type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
                   <div class="flex space-x-2 items-center xs:items-start">
                     <img src="assets/image/yoona_lim.jpg" alt="product_image" class="rounded-lg" width="69" height="69">
                     <div class="items-start">
@@ -51,7 +51,7 @@
                       <p class="text-purple-600 text-sm font-semibold cursor-pointer">Tulis Catatan</p>
                     </div>
                     <div class="flex-1 font start-end text-sm min-w-0 p-0">
-                      <div class="justify-center flex space-x-2 items-center text-slate-400">
+                      <div class="justify-center flex space-x-2 items-center text-slate-600">
                         <p class=" justify-end cursor-pointer">Pindahkan ke Wishlist</p>
                         <p>|</p>
                         <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -67,7 +67,7 @@
                           d="M4.4443 18.3147C6.08879 19.4135 8.02219 20 10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 8.02219 19.4135 6.08879 18.3147 4.4443C17.2159 2.79981 15.6541 1.51809 13.8268 0.761209C11.9996 0.00433283 9.98891 -0.193701 8.0491 0.192152C6.10929 0.578004 4.32746 1.53041 2.92894 2.92894C1.53041 4.32746 0.578004 6.10929 0.192152 8.0491C-0.1937 9.98891 0.00433283 11.9996 0.761209 13.8268C1.51809 15.6541 2.79981 17.2159 4.4443 18.3147ZM5.55544 3.34825C6.87103 2.4692 8.41775 2 10 2C12.1217 2 14.1566 2.84286 15.6569 4.34315C17.1571 5.84344 18 7.87827 18 10C18 11.5823 17.5308 13.129 16.6518 14.4446C15.7727 15.7602 14.5233 16.7855 13.0615 17.391C11.5997 17.9965 9.99113 18.155 8.43928 17.8463C6.88743 17.5376 5.46197 16.7757 4.34315 15.6569C3.22433 14.538 2.4624 13.1126 2.15372 11.5607C1.84504 10.0089 2.00347 8.40035 2.60897 6.93854C3.21447 5.47673 4.23985 4.2273 5.55544 3.34825ZM6 11H14C14.2652 11 14.5196 10.8946 14.7071 10.7071C14.8946 10.5196 15 10.2652 15 10C15 9.73478 14.8946 9.48043 14.7071 9.29289C14.5196 9.10536 14.2652 9 14 9H6C5.73478 9 5.48043 9.10536 5.29289 9.29289C5.10536 9.48043 5 9.73478 5 10C5 10.2652 5.10536 10.5196 5.29289 10.7071C5.48043 10.8946 5.73478 11 6 11Z"
                           fill="var(--NN300, #BFC9D9)"></path>
                       </svg>
-                      <input _ngcontent-ng-c2985146161="" value="0" min="1"
+                      <input aria-label="qty" value="0" min="1"
                         class="h-8 w-8 border bg-white text-center text-xs outline-none border-none">
                       <svg width="20" height="20" viewBox="0 0 20 20" class="text-purple-600 cursor-pointer" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -107,7 +107,7 @@
           </div>
           <div class="border-2 shadow-sm p-4 rounded-b-box text-md">
             <p>Ringkasan belanja</p>
-            <div class="flex items-center space-x-4 font-semibold text-gray-400 mt-2">
+            <div class="flex items-center space-x-4 font-semibold text-slate-600 mt-2">
               <div class="flex-shrink-0">
                 <p>Total Harga</p>
               </div>

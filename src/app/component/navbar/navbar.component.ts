@@ -4,7 +4,7 @@ import { toggleSidebar } from '../../reducer/sidebar.action';
 
 import { AppState } from '../../reducer/app.state';
 import { filter, take } from 'rxjs';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
