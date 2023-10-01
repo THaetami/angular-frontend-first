@@ -1,3 +1,3 @@
 # AngularFrontendFirst
 
-### Preview [disini](https://github.com/THaetami/angular-frontend-first-boilerplate)
+### Preview [disini](https://sentt.netlify.app/)
