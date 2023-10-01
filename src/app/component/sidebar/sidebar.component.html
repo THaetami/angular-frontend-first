@@ -1,21 +1,21 @@
-<div *ngIf="isOpen$ | async" class="w-[15rem] h-full mt-0  top-0 fixed block sm:hidden flex-shrink-0">
+<div *ngIf="isOpen$ | async" class="w-[15rem] h-full mt-0  top-0 fixed block sm:hidden flex-shrink-0 select-none">
   <div class="h-full" style="background: rgb(59,20,167); background: linear-gradient(180deg, rgba(59,20,167,1) 35%, rgba(246,184,184,1) 88%);">
     <div class="flex flex-col h-full overflow-y-auto shadow-2xl shadow-black">
 
-      <div class="text-transparent text-2xl p-3 w-full flex justify-start">
+      <div class="text-transparent text-2xl p-2 w-full flex justify-start">
         Lorem Ipsum
       </div>
 
-      <div style="background-image: url(assets/image/smoke-01.jpeg); background-size: cover;" class="text-purple-900 flex justify-end mx-auto bg-transparent py-4 px-4 w-full">
+      <div style="background-image: url(assets/image/smoke-01.jpeg); background-size: cover;" class="text-purple-900 bg-white flex justify-end mx-auto bg-transparent py-4 px-4 w-full">
         <div class="mr-1 flex-shrink-0 my-auto">
-          <img src="assets/image/pena-01.png" width="120" alt="logo">
+          <img src="assets/image/pena-01.png" width="120" height="30" alt="logo">
         </div>
         <div class=" my-1 text-xl font-bold text-end mr-2">
           <span>SENT</span>
         </div>
       </div>
 
-      <a (click)="toggleSidebar()" routerLink="/home" routerLinkActive="bg-orange-300" class="text-white py-2 px-4 w-full flex hover:bg-orange-200 hover:text-black cursor-pointer hover:border-b-2 hover:border-white">
+      <a (click)="toggleSidebar()" routerLink="/home" routerLinkActive="bg-link-active border-b border-white border-medium" class="text-white py-2 px-4 w-full flex cursor-pointer">
         <div class="mr-4 flex-shrink-0 my-auto">
           <svg class="fill-current w-5 h-5" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
@@ -26,7 +26,7 @@
         </div>
       </a>
 
-      <a (click)="toggleSidebar()" routerLink="/about" routerLinkActive="bg-orange-300" class="text-white py-2 px-4 w-full flex hover:bg-orange-200 hover:text-black cursor-pointer hover:border-b-2 hover:border-white">
+      <a (click)="toggleSidebar()" routerLink="/about" routerLinkActive="bg-link-active border-b border-white border-medium" class="text-white py-2 px-4 w-full flex cursor-pointer">
         <div class="mr-4 flex-shrink-0 my-auto">
           <svg class="h-5 w-5" fill="none" focusable="false" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -39,7 +39,7 @@
         </div>
       </a>
 
-      <div class="text-white py-2 px-4 w-full flex hover:bg-orange-200 hover:text-black cursor-pointer hover:border-b-2 hover:border-white">
+      <div class="text-white py-2 px-4 w-full flex cursor-pointer">
         <div class="mr-4 flex-shrink-0 my-auto">
           <svg class="fill-current h-5 w-5" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
             <path
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <div class="text-white py-2 px-4 w-full flex mb-1 hover:bg-orange-200 hover:text-black cursor-pointer hover:border-b-2 hover:border-white">
+      <div class="text-white py-2 px-4 w-full flex mb-1 cursor-pointer">
         <div class="mr-4 flex-shrink-0 my-auto">
           <svg class="fill-current h-5 w-5" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M21 3H3C2 3 1 4 1 5v14c0 1.1.9 2 2 2h18c1 0 2-1 2-2V5c0-1-1-2-2-2zM5 17l3.5-4.5 2.5 3.01L14.5 11l4.5 6H5z">

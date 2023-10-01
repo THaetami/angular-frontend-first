@@ -1,4 +1,4 @@
-<div class="fixed right-0 shadow-md h-full  flex flex-col md:top-[4rem] top-[3.6rem] left-0 w-[3.3rem] md:w-[3.6rem] hover:w-64 bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 border-none z-10 sidebar">
+<div class="fixed right-0 shadow-md h-full  flex flex-col top-[3.4rem] xs:top-[3.5rem] left-0 w-[3.3rem] md:w-[3.6rem] hover:w-64 bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 border-none z-10 sidebar select-none">
   <div class="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
     <ul class="space-y-2 font-medium">
       <li class="my-3 cursor-pointer" >
@@ -11,7 +11,7 @@
           <a (click)="toggleSidebarIfOpen()" routerLink="/home" class="flex-1 ml-6 whitespace-nowrap" routerLinkActive="font-bold">Home</a>
         </div>
       </li>
-      <li class="my-3 cursor-pointer">
+      <li class="my-3 cursor-no-drop">
         <span class="flex items-center p-4 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <svg class="flex-shrink-0 w-5 h-5  transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
@@ -37,7 +37,7 @@
             class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
         </div>
       </li>
-      <li class="my-3 cursor-pointer">
+      <li class="my-3 cursor-no-drop">
         <span
           class="flex items-center p-4 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <svg
@@ -61,7 +61,7 @@
           <a (click)="toggleSidebarIfOpen()" routerLink="/product" routerLinkActive="font-bold" class="flex-1 ml-7 whitespace-nowrap">Products</a>
         </div>
       </li>
-      <li class="my-3 cursor-pointer">
+      <li class="my-3 cursor-no-drop">
         <span
           class="flex items-center p-4 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <svg
@@ -73,7 +73,7 @@
           <span class="flex-1 ml-7 whitespace-nowrap">Sign In</span>
         </span>
       </li>
-      <li class="my-3 cursor-pointer">
+      <li class="my-3 cursor-no-drop">
         <span
           class="flex items-center p-4 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <svg

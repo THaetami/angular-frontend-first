@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -9,6 +9,7 @@ import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { ShipmentPageComponent } from './pages/shipment-page/shipment-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -18,12 +19,15 @@ const routes: Routes = [
   { path: 'product', component: ProductPageComponent },
   { path: 'product/:id', component: DetailProductPageComponent },
   { path: 'cart', component: CartPageComponent },
+  { path: 'cart/shipment', component: ShipmentPageComponent },
   {
     path: 'message', component: MessagePageComponent,
     children: [
       { path: ':username', component: ChatPageComponent }
     ]
-  }
+  },
+   { path: '**', redirectTo: '/home' }
+
 ];
 
 @NgModule({

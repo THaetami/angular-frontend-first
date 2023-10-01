@@ -1,0 +1,21 @@
+<div class="items-center justify-center flex">
+  <img height="250" width="250" class="xs:w-[320px] xs:h-[320px] rounded-none sm:rounded-md mb-6" [src]="currentImage"
+    alt="Card image">
+</div>
+<div class="items-center justify-center flex">
+  <div class="w-[250px] xs:w-80 text-sm rounded-none sm:rounded-md px-0 py-1 bg-white space-x-0">
+    <ngx-slick-carousel class="carousel rounded-none sm:rounded-md ml-0 xs:ml-3" #slickModal="slick-carousel"
+      [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let item of items" class="slide ">
+        <img [src]="item.image" (click)="changeImage(item.image)"
+          [class.border-purple-600]="selectedImage === item.image"
+          class=" border-2 cursor-pointer rounded-none sm:rounded-md w-[4rem] h-[4rem]" alt="image_product" />
+      </div>
+    </ngx-slick-carousel>
+  </div>
+</div>
+<div class="items-center justify-center flex lg:hidden">
+  <button
+    class="w-[250px] xs:w-80 shadow-md rounded-none sm:rounded-md shadow-black mb-2 hover:bg-purple-400 hover:text-black mt-2 bg-purple-600 py-1.5 xs:py-2 text-white font-bold select-none"
+    onclick="my_modal_2.showModal()">Checkout</button>
+</div>

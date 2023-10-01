@@ -1,324 +1,109 @@
 
-<app-navbar class="top-0 z-50 w-full fixed shadow-black shadow-md" style="background: rgb(59,20,167);"></app-navbar>
+<app-navbar class="top-0 z-50 w-full fixed shadow-black shadow-sm" style="background: rgb(59,20,167);"></app-navbar>
 
-<div class="lg:container mx-auto">
-  <div class="ml-[3.4rem] mr-0 sm:ml-[3.5rem] xs:ml-[4rem] md:ml-[4.4rem] xs:mr-3 md:mr-2 mt-[5rem] mb-2">
-    <div class="grid md:grid-cols-2 md:flex w-full md:justify-center gap-3">
-      <div class="h-full tab:h-screen w-full md:w-[40%] p-1 lg:w-[30%] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:shadow-none">
-        <div class="items-center justify-center flex">
-          <img height="250" width="250" class="xs:w-[320px] xs:h-[320px] rounded-none sm:rounded-md mb-6" [src]="currentImage" alt="Card image">
-        </div>
-        <div class="items-center justify-center flex">
-          <div class="w-[250px] xs:w-80 text-sm rounded-md px-0 py-1 bg-white space-x-0">
-            <ngx-slick-carousel class="carousel rounded-md ml-0 xs:ml-3" #slickModal="slick-carousel" [config]="slideConfig">
-              <div ngxSlickItem *ngFor="let item of items" class="slide ">
-                <img [src]="item.image" (click)="changeImage(item.image)"
-                      [class.border-purple-600]="selectedImage === item.image"
-                      class=" border-2 cursor-pointer rounded-md w-[4rem] h-[4rem]" alt="image_product"/>
-              </div>
-            </ngx-slick-carousel>
-          </div>
-        </div>
-        <div  class="items-center justify-center flex lg:hidden">
-            <button class="w-full mb-2 rounded-md hover:bg-purple-900 mt-2 bg-purple-600 py-1.5 xs:py-2 text-white font-bold" onclick="my_modal_2.showModal()">Checkout</button>
-        </div>
-          <app-chart-customer-review class="mt-4 justify-center hidden tab:flex"></app-chart-customer-review>
+
+
+  <div class="lg:container mx-auto">
+    <div class="ml-[3.4rem] mr-0 sm:ml-[3.5rem] xs:ml-[4rem] md:ml-[4.4rem] xs:mr-3 md:mr-2 mt-[4.5rem] mb-2">
+      <div *ngIf="!product.id; else elseBlock">
+       <app-not-found-page></app-not-found-page>
       </div>
+      <ng-template #elseBlock>
+        <div class="grid md:grid-cols-2 md:flex w-full md:justify-center gap-3">
+          <div class="h-full tab:h-screen w-full md:w-[40%] p-1 lg:w-[30%] shaddow-custom rounded-none xs:rounded-md">
+            <app-preview-image-product
+              [currentImage]="currentImage || ''"
+            ></app-preview-image-product>
 
-      <div class=" h-screen overflow-auto w-full md:w-[60%] lg:tab:w-[47%] p-1">
-        <div class="font-bold text-xl md:text-3xl mb-1">Panci Listrik Serbaguna Advance C-330 Steamer dan Ricecooker</div>
-        <div class="inline-block sm:flex text-md space-x-0 text-slate-700 sm:space-x-1 mb-4">
-          <div><span class="font-semibold text-black">Terjual</span> 100+ .</div>
-          <div class="flex">
-            <svg class="w-5 h-5 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-              viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <p><span class="font-semibold text-black">4.5</span> (47 rating) .</p>
-          </div>
-          <p><span class="font-semibold text-black">Diskusi</span> (5)</p>
-        </div>
-        <div class="font-bold text-2xl">Rp. 130.000</div>
-        <div class="flex space-x-1 items-center mt-1">
-          <small class="bg-red-200 p-0.5 rounded">70%</small>
-          <p class="line-through font-bold">Rp. 500.000</p>
-        </div>
 
-        <ul class="mb-5 mt-8 font-bold flex list-none flex-row flex-wrap border-b-0 pl-0" role="tablist" data-te-nav-ref>
-          <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
-            <div (click)="showTab(1)"
-                [class.border-b-purple-600]="selectedTab === 1" [class.text-purple-600]="selectedTab === 1"
-                class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
-                data-te-toggle="pill" data-te-target="#tabs-home02" data-te-nav-active role="tab">
-              Detail
-            </div>
-          </li>
-          <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
-            <div (click)="showTab(2)"
-              [class.border-b-purple-600]="selectedTab === 2" [class.text-purple-600]="selectedTab === 2"
-              class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
-              data-te-toggle="pill" data-te-target="#tabs-profile02" role="tab">
-              Spesifikasi
-            </div>
-          </li>
-          <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
-            <div (click)="showTab(3)"
-              [class.border-b-purple-600]="selectedTab === 3" [class.text-purple-600]="selectedTab === 3"
-              class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
-              data-te-toggle="pill" data-te-target="#tabs-messages02" role="tab">
-              Info
-            </div>
-          </li>
-        </ul>
+            <app-chart-customer-review
+              [rating]="product.rate" class="mt-4 justify-center hidden tab:flex"
+            ></app-chart-customer-review>
+          </div>
 
-        <div class="mb-6">
-          <div *ngIf="selectedTab === 1" class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-            id="tabs-home02" role="tabpanel" data-te-tab-active>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
-            </p><br>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
-              voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
-            </p>
-          </div>
-          <div *ngIf="selectedTab === 2"
-            class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
-            role="tabpanel" data-te-tab-active>
-            <div class="text-lg font-bold">Info Produk</div>
-            <div class="flex space-x-3">
-              <p>Merek :</p>
-              <p>Advance</p>
-            </div>
-          </div>
-          <div *ngIf="selectedTab === 3"
-            class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
-            role="tabpanel" data-te-tab-active>
-            <div class="font-bold text-md">Jam Operasional pengiriman: </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
-              voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
-            </p><br>
-            <div class="font-bold text-md">Claim barang pecah: </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
-              voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
-            </p>
-          </div>
-        </div>
-        <hr class="mt-3">
-        <div class="flex mt-8 items-center font-bold space-x-4">
-          <div class="flex-shrink-0">
-            <img src="assets/image/yoona_lim.jpg" class="h-12 w-12" alt="logo">
-          </div>
-          <div class="flex-1 text-md min-w-0 p-0">
-            <p>Advance Digital Store</p>
-            <p>Online</p>
-          </div>
-          <div class="px-4 py-1 rounded-md bg-purple-300 cursor-pointer hover:bg-purple-600">
-            Follow
-          </div>
-        </div>
-        <div class="inline-block xs:flex pl-[4rem] mt-3 font-normal space-x-0 xs:space-x-2">
-          <p>4.8 rata-rata ulasan |</p>
-          <p>4 Jam pesanan diproses</p>
-        </div>
-        <hr class="mt-6">
-        <div class="text-md mt-4">
-          <div class="font-bold text-lg">Pengiriman</div>
-          <div class="flex items-center space-x-1">
-            <svg class="unf-icon" viewBox="0 0 24 24" width="18" height="18" fill="var(--color-icon-enabled, #2E3137)"
-              style="display: inline-block; vertical-align: middle;">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M9.02 2.809A7.67 7.67 0 0112 2.24 7.67 7.67 0 0119.75 10c0 7.264-6.896 11.372-7.365 11.65a.81.81 0 01-.755.01l-.015-.01C11.146 21.373 4.25 17.265 4.25 10a7.67 7.67 0 014.77-7.191zM5.75 10c0 5.58 4.85 9.18 6.25 10.11 1.4-.93 6.25-4.55 6.25-10.11A6.188 6.188 0 0012 3.74 6.19 6.19 0 005.75 10zm4.168-3.129A3.75 3.75 0 0112 6.24 3.76 3.76 0 0115.75 10a3.75 3.75 0 11-5.832-3.129zm.83 4.99a2.25 2.25 0 102.503-3.74 2.25 2.25 0 00-2.502 3.74z">
-              </path>
-            </svg>
-            <p>Dikirim dari Jakarta Utara</p>
-          </div>
-          <div class="flex items-center space-x-1">
-            <svg class="unf-icon" viewBox="0 0 24 24" width="20" height="20" fill="var(--color-icon-enabled, #2E3137)"
-              style="display: inline-block; vertical-align: middle;">
-              <path
-                d="M21.07 10.94l-2.41-2.75a2.73 2.73 0 00-2.07-.94h-2.84V7A2.75 2.75 0 0011 4.25H4A1.76 1.76 0 002.25 6v10A2.75 2.75 0 005 18.75h.53a1.9 1.9 0 000 .25 2 2 0 004 0 1.9 1.9 0 000-.25h5.06a1.896 1.896 0 000 .25 2 2 0 004 0 1.896 1.896 0 000-.25H20A1.76 1.76 0 0021.75 17v-4.25a2.75 2.75 0 00-.68-1.81zM3.75 16V6A.25.25 0 014 5.75h7A1.25 1.25 0 0112.25 7v10.25H5A1.25 1.25 0 013.75 16zm16.5 1a.25.25 0 01-.25.25h-6.25v-8.5h2.84a1.24 1.24 0 01.94.43l.94 1.07H17a.76.76 0 00-.75.75v1a.76.76 0 00.75.75h3.25V17z">
-              </path>
-            </svg>
-            <p>Ongkir Reguler 22rb - 22,8rb</p>
-          </div>
-          <p class="ml-6">Estimasi tiba 12-18 Sep</p>
-        </div>
-        <div class="flex mt-2 items-center space-x-4">
-          <div class="flex-1">
-            <div class="flex ml-6 text-md min-w-0 p-0 space-x-2">
-              <p>Kurir lainnya</p>
-              <small class="px-2 py-0.5 bg-slate-400 rounded-md">Instan</small>
-            </div>
-          </div>
-          <small class="font-bold text-purple-600 cursor-pointer">Lihat pilihan Kurir</small>
-        </div>
-        <hr class="mt-6">
-        <div class="text-md mt-4">
-          <div class="font-bold text-lg">Penawaran lainnya</div>
-          <div class="flex items-center space-x-1">
-            <img src="assets/image/pdp-paylatercicilan@3x.png" class="w-6 h-6" alt="paylater">
-            <p>Paylater & Cicilan</p>
-          </div>
-          <p class="ml-7">Beli sekarang, bayar akhir bulan atau 30 hari lagi <small class="font-bold">Selengkapnya</small></p>
-        </div>
-        <hr class="mt-6">
-        <div class="text-md mt-4">
-          <div class="font-bold text-lg">Beli di aplikasi, makin banyak promo!</div>
-          <div class="flex items-center space-x-1">
-            <div class="flex-shrink-0">
-              <svg class="unf-icon" viewBox="0 0 24 24" width="26" height="26" fill="var(--GN500, #00AA5B)"
-                style="display: inline-block; vertical-align: middle;">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M8 2.25h8A2.75 2.75 0 0118.75 5v14A2.75 2.75 0 0116 21.75H8A2.75 2.75 0 015.25 19V5A2.75 2.75 0 018 2.25zm8.884 17.634A1.25 1.25 0 0017.25 19V5A1.25 1.25 0 0016 3.75h-1A1.49 1.49 0 0113.5 5h-3A1.49 1.49 0 019 3.75H8A1.25 1.25 0 006.75 5v14A1.25 1.25 0 008 20.25h8c.331 0 .65-.132.884-.366zM11 17.25h2a.75.75 0 110 1.5h-2a.75.75 0 110-1.5z">
-                </path>
-              </svg>
-            </div>
-            <div class="flex-1 text-md min-w-0 p-0">
-              <p>Scan QR-nya untuk lihat barang ini di aplikasi Sent. Bebas ongkir, lho~</p>
-            </div>
-            <button class="px-4 py-1 rounded-md bg-purple-300 cursor-pointer hover:bg-purple-600 font-bold">Scan QR</button>
 
-          </div>
-        </div>
-        <div class="text-md mt-16">
-          <app-chart-customer-review class="block tab:hidden"></app-chart-customer-review>
-          <div class="flex items-center mt-10 space-x-4">
-            <div class="flex-shrink-0">
-              <div class="font-bold text-lg">Ulasan Pilihan</div>
-              <small>Menampilkan 1 dari 1 ulasan</small>
-            </div>
-            <div class="flex-1 hidden sm:inline-block font start-end text-sm font-bold min-w-0 p-0">
-              <p class="justify-end flex ">Urutkan</p>
-            </div>
-            <select aria-label="rating" id="rating"
-              class="bg-gray-50 cursor-pointer border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full sm:w-44 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option class="py-2 cursor-pointer" selected>Terbaru</option>
-              <option class="py-2 cursor-pointer" value="US">Rating Tertinggi</option>
-              <option class="py-2 cursor-pointer" value="CA">Rating terendah</option>
-            </select>
+          <div class=" h-screen overflow-auto w-full md:w-[60%] lg:tab:w-[47%] p-1">
+            <app-product-content
+              [title]="product.title || ''"
+              [rate]="product.rate || '0'"
+              [sellingPrice]="product.sellingPrice || ''"
+              [discount]="product.discount || 0"
+              [price]="product.price || ''"
+            ></app-product-content>
 
-          </div>
-          <div class="flex items-center mt-6 space-x-4">
-            <div class="flex-shrink-0">
-              <div class="flex">
-                <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-purple-600 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-gray-300 mr-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-              </div>
-            </div>
-            <div class="flex-1 font text-md min-w-0 p-0">
-              <p>1 hari lalu</p>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
-              </path>
-            </svg>
+            <app-product-detail
+              [description]="product.description || ''"
+              [title]="product.title || ''"
+            ></app-product-detail>
 
-          </div>
-          <div class=" border-b-2 pb-3">
-            <div class="flex items-center mt-3 font-semibold space-x-4">
-              <div class="flex-shrink-0">
-                <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="avatar">
-              </div>
-              <div class=" font text-md min-w-0 p-0">
-                <p>Yoona</p>
-              </div>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur similique labore suscipit ipsam harum,
-              delectus
-              doloremque, placeat, animi ea recusandae consectetur aliquid praesentium eos corrupti hic molestias excepturi
-              nostrum
-              sequi.</p>
-            <div class="flex items-center mt-3 space-x-4">
-              <div class="flex-shrink-0  ">
-                <svg class="unf-icon cursor-pointer hover:text-purple-600" viewBox="0 0 24 24" width="18" height="18"
-                  fill="currentColor" style="display: inline-block; vertical-align: middle;">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M13.75 8.65h3.85a2.85 2.85 0 012.86 2.86 2.719 2.719 0 01-1.36 2.4l-.55 4.29a2.82 2.82 0 01-2.84 2.55h-8.7a.75.75 0 01-.75-.75v-7.4a.73.73 0 01.08-.33l2-4.15V5.21A1.76 1.76 0 019 3.84a1.7 1.7 0 011.47-.34 3.77 3.77 0 013.28 3.8v1.35zM3.473 12.463A.76.76 0 014 12.24a.76.76 0 01.75.76v6.99a.75.75 0 11-1.5 0v-7a.76.76 0 01.223-.527z">
-                  </path>
-                </svg>
-              </div>
-              <div class="flex-1 font text-md min-w-0 p-0 ">
-                <div>Membantu</div>
-              </div>
-              <div (click)="toggleCollapse()" class="flex ">
-                <p class="cursor-pointer hover:underline">{{ isCollapsed ? 'Lihat Balasannya' : 'Tutup Balasannya' }}</p>
-                <svg [class.rotate-0]="isCollapsed" [class.rotate-180]="!isCollapsed"
-                  class="unf-icon css-1375h5i cursor-pointer" viewBox="0 0 24 24" width="24" height="24"
-                  fill="var(--color-icon-enabled, #2E3137)" style="display: inline-block; vertical-align: middle;">
-                  <path
-                    d="M12 15.25a.74.74 0 01-.53-.22l-5-5A.75.75 0 017.53 9L12 13.44 16.47 9a.75.75 0 011.06 1l-5 5a.74.74 0 01-.53.25z">
-                  </path>
-                </svg>
+            <app-shop-credibility
+              [rate]="product.rate || '0'"
+            ></app-shop-credibility>
+
+            <app-shipment ></app-shipment>
+
+            <app-offerings ></app-offerings>
+
+            <app-qrcode ></app-qrcode>
+
+            <div class="text-md mt-16">
+              <app-chart-customer-review class="block tab:hidden" [rating]="product.rate || '0'"></app-chart-customer-review>
+
+              <div class="flex items-center mt-10 space-x-4">
+                <div class="flex-shrink-0">
+                  <div class="font-bold text-lg">Ulasan Pilihan</div>
+                  <small>Menampilkan 1 dari 1 ulasan</small>
+                </div>
+                <div class="flex-1 hidden sm:inline-block font start-end text-sm font-bold min-w-0 p-0">
+                  <p class="justify-end flex ">Urutkan</p>
+                </div>
+                <select aria-label="rating" id="rating"
+                  class="bg-gray-50 cursor-pointer select-none border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full sm:w-44 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option class="py-2 cursor-pointer" selected>Terbaru</option>
+                  <option class="py-2 cursor-pointer" value="US">Rating Tertinggi</option>
+                  <option class="py-2 cursor-pointer" value="CA">Rating terendah</option>
+                </select>
               </div>
 
+              <app-review-feed ></app-review-feed>
             </div>
           </div>
-          <div *ngIf="!isCollapsed" class="bg-gray-300 mt-3 px-3 py-2 rounded-lg">
-            <div class="flex items-center font-semibold space-x-4">
-              <div class="flex-shrink-0">
-                <img width="32" height="32" class="rounded-full" src="assets/image/yoona_lim.jpg" alt="avatar">
-              </div>
-              <div class="inline-block xs:flex font-semibold text-sm items-center min-w-0 p-0 space-x-1">
-                <p>Advance Digital Store</p>
-                <small class="bg-purple-600 rounded-md px-1 text-white">penjual</small>
-                <p>2 Jam lalu</p>
-              </div>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur similique labore suscipit ipsam harum,
-              delectus
-              doloremque, placeat, animi ea recusandae consectetur aliquid praesentium eos corrupti hic molestias excepturi
-              nostrum
-              sequi.</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="hidden h-screen lg:w-[27%] lg:flex top-0 md:flex-col gap-4">
-        <app-checkout></app-checkout>
-        <div class="mt-2">
-          <img src="https://images.tokopedia.net/img/jdvdtx/2023/8/31/a92bbc2d-881b-49bc-94de-1cc057b0c682.jpg" alt="promo" width="372" height="124">
+          <div class="hidden h-screen lg:w-[27%] lg:flex top-0 md:flex-col gap-4">
+            <app-checkout
+              [id]="product.id || 0"
+              [title]="product.title || ''"
+              [stock]="product.stock || 0"
+              [image]="product.image || ''"
+              [price]="product.price || '0'"
+              [sellingPrice]="product.sellingPrice || '0'"
+            ></app-checkout>
+
+            <div class="mt-2">
+              <img src="https://images.tokopedia.net/img/jdvdtx/2023/8/31/a92bbc2d-881b-49bc-94de-1cc057b0c682.jpg" alt="promo" width="372" height="124">
+            </div>
+          </div>
+
         </div>
-      </div>
+
+      </ng-template>
     </div>
   </div>
-</div>
 
+<dialog id="my_modal_2" class="modal lg:hidden ">
+  <div class="modal-box rounded-none xs:w-96">
+    <app-checkout
+      [id]="product.id || 0"
+      [title]="product.title || ''"
+      [stock]="product.stock || 0"
+      [image]="product.image || ''"
+      [price]="product.price || '0'"
+      [sellingPrice]="product.sellingPrice || '0'"
+    ></app-checkout>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button class="select-none">close</button>
+  </form>
+</dialog>
 
-  <dialog id="my_modal_2" class="modal lg:hidden ">
-    <div class="modal-box rounded-none xs:w-96">
-      <app-checkout></app-checkout>
-    </div>
-    <form method="dialog" class="modal-backdrop">
-      <button>close</button>
-    </form>
-  </dialog>
 <app-sidebar-auth></app-sidebar-auth>

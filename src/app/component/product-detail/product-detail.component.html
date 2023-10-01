@@ -1,0 +1,57 @@
+<ul class="mb-5 mt-8 font-bold flex list-none flex-row flex-wrap border-b-0 pl-0 select-none" role="tablist"
+  data-te-nav-ref>
+  <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
+    <div (click)="showTab(1)" [class.border-b-purple-600]="selectedTab === 1"
+      [class.text-purple-600]="selectedTab === 1"
+      class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
+      data-te-toggle="pill" data-te-target="#tabs-home02" data-te-nav-active role="tab">
+      Detail
+    </div>
+  </li>
+  <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
+    <div (click)="showTab(2)" [class.border-b-purple-600]="selectedTab === 2"
+      [class.text-purple-600]="selectedTab === 2"
+      class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
+      data-te-toggle="pill" data-te-target="#tabs-profile02" role="tab">
+      Spesifikasi
+    </div>
+  </li>
+  <li role="presentation" class="flex-grow cursor-pointer basis-0 text-center">
+    <div (click)="showTab(3)" [class.border-b-purple-600]="selectedTab === 3"
+      [class.text-purple-600]="selectedTab === 3"
+      class="my-0 block border-x-0 border-b-2 border-t-2 px-0 md:px-7 pb-2 pt-2 text-sm font-medium"
+      data-te-toggle="pill" data-te-target="#tabs-messages02" role="tab">
+      Info
+    </div>
+  </li>
+</ul>
+<div class="mb-6">
+  <div *ngIf="selectedTab === 1"
+    class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
+    role="tabpanel" data-te-tab-active>
+    {{ description }}
+  </div>
+  <div *ngIf="selectedTab === 2"
+    class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
+    role="tabpanel" data-te-tab-active>
+    <div class="text-lg font-bold">Info Produk</div>
+    <div class="flex space-x-3">
+      <p>Merek :</p>
+      <p>{{ title }}</p>
+    </div>
+  </div>
+  <div *ngIf="selectedTab === 3"
+    class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02"
+    role="tabpanel" data-te-tab-active>
+    <div class="font-bold text-md">Jam Operasional pengiriman: </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
+      voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
+    </p><br>
+    <div class="font-bold text-md">Claim barang pecah: </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A eius veniam, molestias temporibus omnis eveniet quam
+      voluptatem maxime esse aut dolorem nihil architecto fuga corporis fugit, id sit voluptate vitae.
+    </p>
+  </div>
+</div>

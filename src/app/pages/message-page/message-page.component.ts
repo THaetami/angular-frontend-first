@@ -2,6 +2,7 @@ import { messages } from './../../sources/message';
 import { Component } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -12,8 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 export class MessagePageComponent {
   constructor(
     private sidebarService: SidebarService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location,
   ) { }
+
 
   messages = [...messages];
 
@@ -24,5 +27,9 @@ export class MessagePageComponent {
   isShow(): boolean {
     const routePath = this.route.snapshot.routeConfig?.path;
     return routePath !== 'message/:username';
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chart-customer-review',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./chart-customer-review.component.css']
 })
 export class ChartCustomerReviewComponent {
+  @Input() rating: string = '0';
+  get numericRating(): number {
+    return parseInt(this.rating, 10);
+  }
 
 }

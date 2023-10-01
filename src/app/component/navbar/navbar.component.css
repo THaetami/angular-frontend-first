@@ -1,0 +1,272 @@
+.bg-custom-hover:hover {
+  background-color: #1abc9c;
+  border-radius: 25px 0px 25px 0px;
+}
+
+ul {
+  position: relative;
+  width: 228px;
+  height: 40px;
+  border-radius: 25px 0px 25px 0px;
+
+  font-size: 0;
+}
+ul li {
+  line-height: 30px;
+  height: 100%;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+ul .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  transition: all 0.5s ease 0s;
+  border-radius: 25px 0px 25px 0px;
+}
+li:nth-child(1) {
+  width: 57px;
+}
+li:nth-child(2) {
+  width: 57px;
+}
+li:nth-child(3) {
+  width: 57px;
+}
+li:nth-child(4) {
+  width: 57px;
+}
+
+ul .start-home,
+li:nth-child(1):hover ~ .animation {
+  width: 57px;
+  left: 0;
+}
+ul .start-about,
+li:nth-child(2):hover ~ .animation {
+  width: 57px;
+  left: 57px;
+  background-color: #e74c3c;
+}
+ul .start-blog,
+li:nth-child(3):hover ~ .animation {
+  width: 57px;
+  left: 114px;
+  background-color: #3498db;
+}
+ul .start-portefolio,
+li:nth-child(4):hover ~ .animation {
+  width: 57px;
+  left: 171px;
+  background-color: #9b59b6;
+}
+
+@media only screen and (min-width: 515px) {
+  ul {
+    width: 288px;
+    /* font-size: 10px; */
+  }
+
+  li:nth-child(1) {
+    width: 72px;
+  }
+  li:nth-child(2) {
+    width: 72px;
+  }
+  li:nth-child(3) {
+    width: 72px;
+  }
+  li:nth-child(4) {
+    width: 72px;
+  }
+
+  ul .start-home,
+  li:nth-child(1):hover ~ .animation {
+    width: 72px;
+    left: 0;
+  }
+  ul .start-about,
+  li:nth-child(2):hover ~ .animation {
+    width: 72px;
+    left: 72px;
+  }
+  ul .start-blog,
+  li:nth-child(3):hover ~ .animation {
+    width: 72px;
+    left: 144px;
+  }
+  ul .start-portefolio,
+  li:nth-child(4):hover ~ .animation {
+    width: 72px;
+    left: 216px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ul {
+    width: 220px;
+    /* font-size: 10px; */
+  }
+
+  li:nth-child(1) {
+    width: 55px;
+  }
+  li:nth-child(2) {
+    width: 55px;
+  }
+  li:nth-child(3) {
+    width: 55px;
+  }
+  li:nth-child(4) {
+    width: 55px;
+  }
+
+  ul .start-home,
+  li:nth-child(1):hover ~ .animation {
+    width: 55px;
+    left: 0;
+  }
+  ul .start-about,
+  li:nth-child(2):hover ~ .animation {
+    width: 55px;
+    left: 55px;
+  }
+  ul .start-blog,
+  li:nth-child(3):hover ~ .animation {
+    width: 55px;
+    left: 110px;
+  }
+  ul .start-portefolio,
+  li:nth-child(4):hover ~ .animation {
+    width: 55px;
+    left: 165px;
+  }
+}
+
+@media only screen and (min-width: 810px) {
+  ul {
+    width: 228px;
+    font-size: 10px;
+  }
+
+  li:nth-child(1) {
+    width: 57px;
+  }
+  li:nth-child(2) {
+    width: 57px;
+  }
+  li:nth-child(3) {
+    width: 57px;
+  }
+  li:nth-child(4) {
+    width: 57px;
+  }
+
+  ul .start-home,
+  li:nth-child(1):hover ~ .animation {
+    width: 57px;
+    left: 0;
+  }
+  ul .start-about,
+  li:nth-child(2):hover ~ .animation {
+    width: 57px;
+    left: 57px;
+  }
+  ul .start-blog,
+  li:nth-child(3):hover ~ .animation {
+    width: 57px;
+    left: 114px;
+  }
+  ul .start-portefolio,
+  li:nth-child(4):hover ~ .animation {
+    width: 57px;
+    left: 171px;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  ul {
+    width: 320px;
+  }
+  li:nth-child(1) {
+    width: 80px;
+  }
+  li:nth-child(2) {
+    width: 80px;
+  }
+  li:nth-child(3) {
+    width: 80px;
+  }
+  li:nth-child(4) {
+    width: 80px;
+  }
+
+  ul .start-home,
+  li:nth-child(1):hover ~ .animation {
+    width: 80px;
+    left: 0;
+  }
+  ul .start-about,
+  li:nth-child(2):hover ~ .animation {
+    width: 80px;
+    left: 80px;
+  }
+  ul .start-blog,
+  li:nth-child(3):hover ~ .animation {
+    width: 80px;
+    left: 160px;
+  }
+  ul .start-portefolio,
+  li:nth-child(4):hover ~ .animation {
+    width: 80px;
+    left: 240px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ul {
+    width: 400px;
+  }
+
+  li:nth-child(1) {
+    width: 100px;
+  }
+  li:nth-child(2) {
+    width: 100px;
+  }
+  li:nth-child(3) {
+    width: 100px;
+  }
+  li:nth-child(4) {
+    width: 100px;
+  }
+
+  ul .start-home,
+  li:nth-child(1):hover ~ .animation {
+    width: 100px;
+    left: 0;
+  }
+  ul .start-about,
+  li:nth-child(2):hover ~ .animation {
+    width: 100px;
+    left: 100px;
+  }
+  ul .start-blog,
+  li:nth-child(3):hover ~ .animation {
+    width: 100px;
+    left: 200px;
+  }
+  ul .start-portefolio,
+  li:nth-child(4):hover ~ .animation {
+    width: 100px;
+    left: 300px;
+  }
+}

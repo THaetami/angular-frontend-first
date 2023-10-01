@@ -1,19 +1,21 @@
 <div class="w-full px-3 py-5 border-2 rounded-none lg:rounded-box">
   <div class="font-bold text-lg mb-6">Atur jumlah dan catatan</div>
   <div class="flex items-center space-x-2 pb-3 border-b-2">
-    <img class="rounded-md" src="assets/image/yoona_lim.jpg" width="50" height="50" alt="imga_product">
+    <img class="rounded-md" [src]="image" width="50" height="50" alt="imga_product">
     <p class="semibold text-md">Brown</p>
   </div>
   <div class="items-center flex mt-3 space-x-1 font-semibold text-md">
     <div class="flex items-center border-slate-300 border-2 hover:border-purple-600 rounded-md">
-      <span class="cursor-pointer rounded-l py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> -
+      <span (click)="decrement()" class="cursor-pointer rounded-l py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> -
       </span>
-      <input aria-label="input qty" class="h-8 w-8 border bg-white text-center text-xs outline-none border-none" value="0" min="1" />
-      <span class="cursor-pointer rounded-r py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> +
+      <input  [(ngModel)]="inputValue" (ngModelChange)="onInputChange()" aria-label="input qty"
+        class="h-8 w-8 border bg-white text-center text-xs outline-none border-none" min="1" [attr.autofocus]="false"
+        [maxLength]="stock.toString().length" />
+      <span (click)="increment()" class="cursor-pointer rounded-r py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> +
       </span>
     </div>
     <p>Stok :</p>
-    <p class="text-orange-300">2</p>
+    <p class="text-orange-300">{{ stock }}</p>
   </div>
   <div class="flex items-center text-purple-600 font-bold hover:underline text-sm mt-3 cursor-pointer space-x-1">
     <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
@@ -24,20 +26,22 @@
     </svg>
     <p>Tambah Catatan</p>
   </div>
-  <p class="line-through font-bold text-gray-300 text-end">Rp. 500.000</p>
+  <p class="line-through font-bold text-gray-300 text-end">{{ total }}</p>
   <div class="flex items-center mt-1 space-x-4">
     <div class="flex-1 font-semibold text-md">
       <p>Subtotal</p>
     </div>
     <div class="flex ">
-      <p class="font-bold text-lg hover:underline">Rp. 130.000</p>
+      <p class="font-bold text-lg hover:underline">{{ subtotal }}</p>
     </div>
   </div>
-  <button class="w-full bg-purple-600 mt-3 py-2 font-bold text-white rounded-xl hover:bg-purple-800">+
-    Keranjang</button>
-  <button class="w-full border-bg-purple-600 border-2 mt-2 py-2 font-bold text-black rounded-xl hover:bg-slate-100">Beli
-    Langsung</button>
-  <div class="grid grid-cols-3 text-sm mt-3 justify-items-center font-bold ">
+  <button (click)="saveToLocalStorage()" class="w-full bg-purple-600 mt-3 py-2 font-bold text-white rounded-xl hover:bg-purple-500 select-none cursor-pointer">+
+    Keranjang
+  </button>
+  <button class="w-full border-bg-purple-600 border-2 mt-2 py-2 font-bold text-black rounded-xl hover:bg-slate-100 select-none">
+    Beli Langsung
+  </button>
+  <div class="grid grid-cols-3 text-sm mt-3 justify-items-center font-bold select-none">
     <div class="flex items-center cursor-pointer">
       <svg class="unf-icon" viewBox="0 0 24 24" width="16" height="16" fill="var(--color-icon-enabled, #2E3137)">
         <path fill-rule="evenodd" clip-rule="evenodd"

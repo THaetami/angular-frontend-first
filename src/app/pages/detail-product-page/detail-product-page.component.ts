@@ -1,55 +1,44 @@
-import { Component } from '@angular/core';
-import { faker } from '@faker-js/faker';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { products, Products } from 'src/app/sources/product';
+
 
 @Component({
   selector: 'app-detail-product-page',
   templateUrl: './detail-product-page.component.html',
   styleUrls: ['./detail-product-page.component.css']
 })
-export class DetailProductPageComponent {
-  items: any[] = [];
-  currentImage: string | undefined;
-  selectedImage: string | null = null;
-  selectedTab: number = 2;
-  isCollapsed: boolean = true;
+export class DetailProductPageComponent implements OnInit {
+  product: Products = {
+    id: 0,
+    title: '',
+    description: '',
+    image: '',
+    price: '0',
+    rate: '0',
+    qty: 0,
+    discount: 0,
+    sellingPrice: '0',
+    stock: 0,
+  };
+  currentImage: string = '';
 
   constructor(
+    private route: ActivatedRoute,
   ) {
 
-    for (let i = 1; i <= 10; i++) {
-      const image = faker.image.urlLoremFlickr({ width:250, height:250, category: 'product' })
-
-      const item = {
-        image,
-      };
-
-      this.items.push(item);
-    }
-
-    if (this.items.length > 0) {
-      this.currentImage = this.items[0].image;
-    }
   }
 
-  slideConfig = {
-    "slidesToShow": 4,
-    "slideToScroll": 4,
-    "autoplay": false,
-    "infinite": false,
-    "arrows": true,
-  }
-
-  changeImage(newImage: string) {
-    this.currentImage = newImage;
-    this.selectedImage = newImage;
-  }
-
-  showTab(tabNumber: number) {
-    this.selectedTab = tabNumber;
-  }
-
-  toggleCollapse() {
-    this.isCollapsed = !this.isCollapsed;
-  }
-
+ ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id !== null) {
+        const foundProduct = products.find(product => product.id === Number(id));
+        if (foundProduct) {
+          this.product = foundProduct;
+          this.currentImage = foundProduct.image;
+        }
+      }
+    });
+ }
 }

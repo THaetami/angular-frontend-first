@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faker } from '@faker-js/faker';
+// import { faker } from '@faker-js/faker';
+import { products } from 'src/app/sources/product';
 
 @Component({
   selector: 'app-card-product',
@@ -8,6 +9,7 @@ import { faker } from '@faker-js/faker';
 })
 export class CardProductComponent implements OnInit {
   items: any[] = [];
+  products = [...products];
 
   itemGroups: any[][] = [];
 
@@ -16,42 +18,65 @@ export class CardProductComponent implements OnInit {
   }
 
   constructor() {
-    for (let i = 1; i <= 100; i++) {
-      const id = i;
-      const title = `${faker.commerce.productName()} [${i}]`;
-      const description = faker.commerce.productDescription();
-      const image = faker.image.urlLoremFlickr({ width:250, height:250, category: 'product' })
-      const price = faker.commerce.price({ min: 10000, max: 100000, dec: 0 })
-      const rate = (Math.floor(Math.random() * 5) + 1).toString();
-      const qty = faker.number.int({ min: 0, max: 10000 })
+    // membuat data products
+    // for (let i = 1; i <= 100; i++) {
+    //   const id = i;
+    //   const title = `${faker.commerce.productName()} [${i}]`;
+    //   const description = faker.commerce.productDescription();
+    //   const image = faker.image.urlLoremFlickr({ width: 250, height: 250, category: 'product' });
+    //   const priceHet = parseFloat(faker.commerce.price({ min: 10000, max: 100000, dec: 2 }));
+    //   const price = Math.ceil(priceHet / 1000) * 1000;
+    //   const rate = (Math.floor(Math.random() * 5) + 1).toString();
+    //   const qty = faker.number.int({ min: 0, max: 10000 });
+    //   const discount = Math.floor(Math.random() * (50 - 5 + 1) + 5);
+    //   const sellingPrice = Math.round((price * (100 - discount)) / 100);
+    //   const stock = faker.number.int({ min: 20, max: 350 });
 
-      const item = {
-        id,
-        title,
-        description,
-        image,
-        price,
-        rate,
-        qty,
-      };
+    //   // Format price and sellingPrice as Indonesian currency
+    // const formattedPrice = price.toLocaleString('id-ID');
+    // const formattedSellingPrice = sellingPrice.toLocaleString('id-ID');
 
-      this.items.push(item);
-    }
+    //   const item = {
+    //     id,
+    //     title,
+    //     description,
+    //     image,
+    //     price: formattedPrice,
+    //     rate,
+    //     qty,
+    //     discount,
+    //     sellingPrice: formattedSellingPrice,
+    //     stock,
+    //   };
+
+    //   this.items.push(item);
+    // }
   }
 
-   isGrabbing = false;
+  isGrabbing = false;
 
   onElementClick() {
     this.isGrabbing = true;
   }
 
   splitItemsIntoGroups() {
-    const groupSize = 7; // Ukuran kelompok (10 data per kelompok)
-    for (let i = 0; i < this.items.length; i += groupSize) {
-      const group = this.items.slice(i, i + groupSize);
+    const groupSize = 7; // Ukuran kelompok (7 data per kelompok)
+    for (let i = 0; i < this.products.length; i += groupSize) {
+      const group = this.products.slice(i, i + groupSize);
       this.itemGroups.push(group);
     }
   }
+
+  // saveItemsToFile() {
+  //   const fileContents = `export const articles: Article[] = ${JSON.stringify(this.items, null, 2)};`;
+  //   const blob = new Blob([fileContents], { type: 'text/plain' });
+  //   const url = window.URL.createObjectURL(blob);
+  //   const a = document.createElement('a');
+  //   a.href = url;
+  //   a.download = '.ts';
+  //   a.click();
+  //   window.URL.revokeObjectURL(url);
+  // }
 
 
   slideConfig = {

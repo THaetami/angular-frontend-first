@@ -1,66 +1,91 @@
-<nav style="background: rgb(59,20,167);" class="flex md:justify-between bg-gray-900 text-white w-full">
-  <div class="py-3 px-5 flex w-full items-center justify-end md:justify-end ">
-    <ul class="flex px-0 lg:px-4 md:mx-auto font-semibold font-heading space-x-1">
-      <li class="py-1 hidden xs:block hover:bg-orange-300 hover:rounded-md hover:text-black hover:shadow-md" routerLinkActive="bg-orange-300 rounded-md text-black"><a routerLink="/home" class="p-2 lg:px-6" >Home</a></li>
-      <li class="py-1 hidden xs:block hover:bg-orange-300 hover:rounded-md hover:text-black hover:shadow-md" routerLinkActive="bg-orange-300 rounded-md text-black"><a routerLink="/about" class="p-2 lg:px-6">About</a></li>
-      <li class="py-1 hidden xs:block hover:bg-orange-300 hover:rounded-md hover:text-black hover:shadow-md" routerLinkActive="bg-orange-300 rounded-md text-black"><span class="p-2 lg:px-6">Service</span></li>
-      <li class="py-1 hidden xs:block hover:bg-orange-300 hover:rounded-md hover:text-black hover:shadow-md" routerLinkActive="bg-orange-300 rounded-md text-black"><span class="p-2 lg:px-6">Pricing</span></li>
-      <li class="md:border w-fit rounded-lg ml-0 xs:ml-3 shadow-sm justify-end md:justify-normal">
-        <button (click)="toggleSidebarIfOpen()" routerLink="/"
-          class="px-2 sm:px-4 py-1 rounded-none sm:rounded-l-lg  bg-purple-600 text-white m-0 hover:bg-orange-300">Sign</button>
-        <button (click)="toggleSidebarIfOpen()" routerLinkActive="bg-orange-300 rounded-md text-black" routerLink="/register"
-          class="px-2 sm:px-4 py-1 rounded-none sm:rounded-r-lg bg-neutral-50 text-black  hover:bg-orange-300">Sign Up</button>
-      </li>
+<nav style="background: rgb(59,20,167);" class=" flex md:justify-between select-none text-white w-full">
+  <div class="py-2 px-3 flex w-full items-center justify-end md:justify-end ">
+    <div class="flex justify-center items-center px-0 lg:px-2 md:mx-auto font-semibold font-heading">
+      <ul class="hidden xs:block">
+        <li routerLink="/home" class="py-1 hidden xs:block bg-custom-hover " routerLinkActive="bg-link-active rounded-md text-black"><a
+            class="p-2 md:px-1 lg:px-3 xl:px-6">Home</a></li>
+        <li class="py-1 hidden xs:block" routerLinkActive="bg-link-active rounded-md text-black"><a routerLink="/about"
+            class="p-2 md:px-1 lg:px-3 xl:px-6">About</a></li>
+        <li class="py-1 hidden xs:block" routerLinkActive="bg-link-active rounded-md text-black"><span
+            class="p-2 md:px-1 lg:px-3 xl:px-6 cursor-no-drop">Service</span></li>
+        <li class="py-1 hidden xs:block" routerLinkActive="bg-link-active rounded-md text-black"><span
+            class="p-2 md:px-1 lg:px-3 xl:px-6 cursor-no-drop">Pricing</span></li>
+        <div class="animation start-home"></div>
+      </ul>
+      <div style="border-radius: 25px 0px 25px 0px;" class="md:border text-sm w-fit ml-0 xs:ml-3 shadow-sm justify-end md:justify-normal">
+        <button (click)="toggleSidebarIfOpen()" routerLink="/" routerLinkActive="text-black" style="border-radius: 25px 0px 0px 0px;"
+          class="p-2 py-1 rounded-none  bg-purple-600 text-white m-0 hover:text-black h-[37px]">Sign</button>
+        <button (click)="toggleSidebarIfOpen()" routerLinkActive="bg-link-active rounded-md text-black" style="border-radius: 0px 0px 25px 0px;"
+          routerLink="/register"
+          class="p-2 py-1 rounded-none bg-neutral-50 text-black  hover:bg-orange-300 h-[37px]">Sign
+          Up</button>
+      </div>
 
-    </ul>
+    </div>
     <div class="flex items-center">
       <svg *ngIf="isShow()" (click)="toggleSidebar()"
-        class="w-6 h-6 text-white block m-1 sm:hidden dark:text-white ml-3 hover:text-orange-200" aria-hidden="true"
+        class="w-6 h-6 text-white block m-1 xs:hidden dark:text-white ml-3 hover:text-orange-200" aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M1 1h15M1 7h15M1 13h15" />
       </svg>
-      <div class="dropdown dropdown-end">
-        <div class="flex items-center hover:text-gray-200 ml-3 cursor-pointer" *ngIf="!isShow()">
-          <svg tabindex="0"  xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden xs:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div (click)="loadDataFromLocalStorage()" class="dropdown dropdown-end ">
+        <div class="flex items-center hover:text-gray-200 ml-3 mr-2" *ngIf="!isShow()">
+          <svg tabindex="0" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden xs:block cursor-pointer"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
-          <svg routerLink="/cart" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block xs:hidden" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
+          <svg routerLink="/cart" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block xs:hidden " fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
-          <span class="flex absolute -mt-5 ml-4">
-            <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
-            </span>
+          <span *ngIf="cart > 0" class="flex absolute -mt-5 ml-4 text-sm select-none">
+            <span class="animate-ping absolute inline-flex h-3 w-3 rounded bg-pink-400 opacity-75"></span>
+            <div class="relative justify-center items-center flex rounded h-5 w-5 bg-pink-500">
+              <small class="text-sm">
+                {{ cart }}
+              </small>
+            </div>
           </span>
         </div>
-        <ul tabindex="0" class="menu dropdown-content rounded-sm overflow-auto h-60 z-[1] p-2 hidden xs:block shadow bg-base-100 w-96 mt-0 -mr-4">
-          <div class="flex items-center text-black mb-2 border-b-2 py-2">
-            <p class="flex-1 font-bold">Keranjang (10)</p>
+        <div tabindex="0"
+          class="menu outline-none dropdown-content rounded-md overflow-auto z-[1] max-h-60 p-2 hidden xs:block shadow-lg bg-base-100 w-96 mt-0 -mr-2">
+          <div *ngIf="cart > 0" class="flex items-center mb-1 border-b-2 py-2">
+            <p class="flex-1 font-bold text-black">Keranjang ({{ cart }})</p>
             <a routerLink="/cart" class="hover:underline text-purple-600 cursor-pointer">Lihat selengkapnya</a>
           </div>
-          <div *ngFor="let i of [1, 2, 3, 4]">
-            <li class="rounded-none">
-              <div class="flex items-center space-x-4">
+          <ng-container *ngIf="!cart">
+            <div  class="flex justify-center items-center mx-auto">
+              <img src="https://ecs7.tokopedia.net/assets-unify/il-header-cart-empty.jpg" alt="not-found" width="160" height="150">
+            </div>
+            <div class="text-center text-black px-1 my-2">
+              <p class="font-bold">Wah keranjang belanjaanmu kosong!</p>
+              Daripada dianggurin, isi saja dengan barang-barang menarik. Lihat-lihat dulu, siapa tahu ada yang kamu suka!
+            </div>
+          </ng-container>
+          <<ng-container *ngFor="let product of products">
+            <div [routerLink]="['/product', product.id]" class="rounded-none ">
+              <div class="flex items-center space-x-4 my-3 cursor-pointer bg:transparent text-black hover:bg-purple-800 hover:text-white hover:opacity-90 p-2 rounded-md">
                 <div class="flex-shrink-0">
-                  <img src="assets/image/yoona_lim.jpg" class="h-12 w-12" alt="sales">
+                  <img [src]="product.image" class="h-12 w-12 rounded-md" alt="sales">
                 </div>
-                <div class="flex-1 text-md text-black min-w-0 p-0">
-                  <p class="line-clamp-1 font-bold">Panci Listrik Serbaguna Advance C-330 Steamer dan Ricecooker</p>
-                  <p>1 Barang</p>
+                <div class="flex-1 text-md min-w-0 p-0">
+                  <p class="line-clamp-1 font-bold hover:underline  text-lg">{{ product.title }}</p>
+                  <p>{{ product.qty }} Barang</p>
                 </div>
-                <p class="font-bold text-orange-300">Rp. 130.000</p>
+                <p class="font-bold text-orange-300">{{ product.subtotal }}</p>
               </div>
-            </li>
-          </div>
-        </ul>
+            </div>
+          </ng-container>
+          <p *ngIf="cart > 2" routerLink="/cart" class="hover:underline text-purple-600 cursor-pointer hover:bg-purple-300 px-2 rounded-md">Lihat selengkapnya...</p>
+        </div>
       </div>
     </div>
   </div>
 </nav>
+
 
 
 

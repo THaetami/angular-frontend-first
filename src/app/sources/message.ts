@@ -1,4 +1,4 @@
-interface Message {
+export interface Message {
   id: number;
   message: string;
 }
@@ -13,8 +13,6 @@ export interface MessageThread {
     receive: Message[];
   };
 }
-
-
 
 export const messages: MessageThread[] = [
   {
