@@ -41,12 +41,7 @@ export class NavbarComponent {
   sOpen$ = this.store.select((state) => state.sidebar.isSidebar);
 
   toggleSidebar() {
-    this.store.dispatch(toggleSidebar()); // Ubah "toogleSidebar" menjadi "toggleSidebar"
-  }
-
-  isShow(): boolean {
-    const routePath = this.route.snapshot.routeConfig?.path;
-    return routePath !== 'product' && routePath !== 'product/:id';
+    this.store.dispatch(toggleSidebar());
   }
 
   toggleSidebarIfOpen() {
@@ -69,5 +64,10 @@ export class NavbarComponent {
         this.cartService.setCartCount(this.products.length);
       }
     }
+  }
+
+  isShow(): boolean {
+    const routePath = this.route.snapshot.routeConfig?.path;
+    return routePath !== 'product' && routePath !== 'product/:id';
   }
 }

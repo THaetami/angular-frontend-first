@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { Location } from '@angular/common';
 import { CartService } from 'src/app/services/cart.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 interface Product {
   id: number;
@@ -34,6 +36,7 @@ export class CartPageComponent {
     private sidebarService: SidebarService,
     private location: Location,
     private cartService: CartService,
+    private toastr: ToastrService,
   ) {
     this.loadDataFromLocalStorage();
   }
@@ -78,7 +81,10 @@ export class CartPageComponent {
 
           this.products.splice(indexToRemove, 1);
           this.cartService.setCartCount(this.products.length);
-          this.countSubtotal()
+          this.countSubtotal();
+          this.toastr.warning('barang telah dihapus dari keranjang', 'Perhatian', {
+            positionClass: 'toast-top-center'
+          })
         }
       }
     }
@@ -205,14 +211,8 @@ export class CartPageComponent {
   }
 
   checkAll(event: any) {
-    // Ketika checkbox teratas diklik, setel nilai 'checked' di setiap produk
-    // sesuai dengan nilai checkbox teratas
     const isChecked = event.target.checked;
     this.products.forEach(product => product.checked = isChecked);
     this.countSubtotal(); // Hitung ulang subtotal
   }
-
-
-
-
 }

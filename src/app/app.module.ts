@@ -35,6 +35,8 @@ import { QRcodeComponent } from './component/qrcode/qrcode.component';
 import { ReviewFeedComponent } from './component/review-feed/review-feed.component';
 import { NotFoundPageComponent } from './component/not-found-page/not-found-page.component';
 import { ShipmentPageComponent } from './pages/shipment-page/shipment-page.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { ShipmentPageComponent } from './pages/shipment-page/shipment-page.compo
     FormsModule,
     AppRoutingModule,
     StoreModule.forRoot({ sidebar: sidebarReducer }),
-    SlickCarouselModule
+    SlickCarouselModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
   ],

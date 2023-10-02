@@ -13,6 +13,7 @@ export class ProductContentComponent {
   @Input() sellingPrice: string = '0';
   @Input() discount: number = 0;
   @Input() price: string = '0';
+  @Input() terjual: number = 0;
 
    constructor(
     private location: Location,

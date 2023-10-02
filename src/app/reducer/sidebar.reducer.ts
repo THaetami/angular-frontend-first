@@ -1,7 +1,7 @@
 // sidebar.reducer.ts
 import { createReducer, on } from '@ngrx/store';
 import { AppState } from './app.state';
-import * as SidebarActions from './sidebar.action'; // Pastikan nama file action sesuai dengan yang digunakan
+import * as SidebarActions from './sidebar.action';
 
 
 // Definisikan initialState

@@ -10,11 +10,13 @@ import { AppState } from '../../reducer/app.state';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  constructor(private store: Store<{ sidebar: AppState }>) {}
+  constructor(
+    private store: Store<{ sidebar: AppState }>
+  ) { }
 
   isOpen$ = this.store.select((state) => state.sidebar.isSidebar);
 
   toggleSidebar() {
-    this.store.dispatch(toggleSidebar()); // Ubah "toogleSidebar" menjadi "toggleSidebar"
+    this.store.dispatch(toggleSidebar());
   }
 }

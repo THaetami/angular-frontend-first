@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
+    private toastr: ToastrService,
   ) {
 
   }
@@ -65,8 +67,6 @@ export class CheckoutComponent implements OnInit {
         this.subtotal = 'Rp. ' + subtotalNumber.toLocaleString('id-ID');
     }
   }
-
-
 
   onInputChange() {
     if (this.inputValue < 0 || !this.inputValue) {
@@ -151,6 +151,7 @@ export class CheckoutComponent implements OnInit {
       this.inputValue = 0;
       this.subtotal = '-';
       this.total = '-';
+      this.toastr.info(`${this.title.toLowerCase()} telah dimasukan ke keranjang`, 'Selamat');
     }
   }
 }

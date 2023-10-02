@@ -8,7 +8,7 @@ import { faker } from '@faker-js/faker';
   styleUrls: ['./preview-image-product.component.css']
 })
 export class PreviewImageProductComponent {
-  items: any[] = [];
+  imageDumy: any[] = [];
   @Input() currentImage: string = '';
   selectedImage: string | null = null;
 
@@ -20,7 +20,7 @@ export class PreviewImageProductComponent {
         const item = {
           image,
         };
-        this.items.push(item);
+        this.imageDumy.push(item);
       }
   }
 

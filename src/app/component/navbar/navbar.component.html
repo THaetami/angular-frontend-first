@@ -14,11 +14,13 @@
       </ul>
       <div style="border-radius: 25px 0px 25px 0px;" class="md:border text-sm w-fit ml-0 xs:ml-3 shadow-sm justify-end md:justify-normal">
         <button (click)="toggleSidebarIfOpen()" routerLink="/" routerLinkActive="text-black" style="border-radius: 25px 0px 0px 0px;"
-          class="p-2 py-1 rounded-none  bg-purple-600 text-white m-0 hover:text-black h-[37px]">Sign</button>
+          class="p-2 py-1 rounded-none  bg-purple-600 text-white m-0 hover:text-black h-[37px]">
+          Sign
+        </button>
         <button (click)="toggleSidebarIfOpen()" routerLinkActive="bg-link-active rounded-md text-black" style="border-radius: 0px 0px 25px 0px;"
-          routerLink="/register"
-          class="p-2 py-1 rounded-none bg-neutral-50 text-black  hover:bg-orange-300 h-[37px]">Sign
-          Up</button>
+          routerLink="/register" class="p-2 py-1 rounded-none bg-neutral-50 text-black  hover:bg-orange-300 h-[37px]">
+          Sign Up
+        </button>
       </div>
 
     </div>
@@ -52,15 +54,15 @@
         </div>
         <div tabindex="0"
           class="menu outline-none dropdown-content rounded-md overflow-auto z-[1] max-h-60 p-2 hidden xs:block shadow-lg bg-base-100 w-96 mt-0 -mr-2">
-          <div *ngIf="cart > 0" class="flex items-center mb-1 border-b-2 py-2">
+          <div *ngIf="cart > 0" class="flex items-center border-b-2 py-2">
             <p class="flex-1 font-bold text-black">Keranjang ({{ cart }})</p>
             <a routerLink="/cart" class="hover:underline text-purple-600 cursor-pointer">Lihat selengkapnya</a>
           </div>
           <ng-container *ngIf="!cart">
-            <div  class="flex justify-center items-center mx-auto">
+            <div  class="flex justify-center items-center mx-auto mt-4">
               <img src="https://ecs7.tokopedia.net/assets-unify/il-header-cart-empty.jpg" alt="not-found" width="160" height="150">
             </div>
-            <div class="text-center text-black px-1 my-2">
+            <div class="text-center text-black px-1 mt-2">
               <p class="font-bold">Wah keranjang belanjaanmu kosong!</p>
               Daripada dianggurin, isi saja dengan barang-barang menarik. Lihat-lihat dulu, siapa tahu ada yang kamu suka!
             </div>

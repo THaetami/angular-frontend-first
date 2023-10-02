@@ -9,7 +9,7 @@ import { messages, MessageThread, Message } from 'src/app/sources/message';
   styleUrls: ['./chat-page.component.css']
 })
 export class ChatPageComponent implements OnInit {
-  message: MessageThread | undefined; // Tambahkan tipe data untuk properti message
+  message: MessageThread | undefined;
   newReplyMessage: string = '';
 
   constructor(

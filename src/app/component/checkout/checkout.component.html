@@ -1,18 +1,23 @@
 <div class="w-full px-3 py-5 border-2 rounded-none lg:rounded-box">
   <div class="font-bold text-lg mb-6">Atur jumlah dan catatan</div>
   <div class="flex items-center space-x-2 pb-3 border-b-2">
-    <img class="rounded-md" [src]="image" width="50" height="50" alt="imga_product">
+    <img class="rounded-md" [src]="image" width="50" height="50" alt="image_product">
     <p class="semibold text-md">Brown</p>
   </div>
   <div class="items-center flex mt-3 space-x-1 font-semibold text-md">
     <div class="flex items-center border-slate-300 border-2 hover:border-purple-600 rounded-md">
       <span (click)="decrement()" class="cursor-pointer rounded-l py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> -
       </span>
-      <input  [(ngModel)]="inputValue" (ngModelChange)="onInputChange()" aria-label="input qty"
-        class="h-8 w-8 border bg-white text-center text-xs outline-none border-none" min="1" [attr.autofocus]="false"
-        [maxLength]="stock.toString().length" />
-      <span (click)="increment()" class="cursor-pointer rounded-r py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> +
-      </span>
+      <input
+        [(ngModel)]="inputValue"
+        (ngModelChange)="onInputChange()"
+        [maxLength]="stock.toString().length"
+        class="h-8 w-8 border bg-white text-center text-xs outline-none border-none"
+        min="1"
+        [attr.autofocus]="false"
+        aria-label="input qty"
+      />
+      <span (click)="increment()" class="cursor-pointer rounded-r py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50">+</span>
     </div>
     <p>Stok :</p>
     <p class="text-orange-300">{{ stock }}</p>
