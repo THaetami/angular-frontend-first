@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./shipment-page.component.css']
 })
 export class ShipmentPageComponent {
+  isCollapse: boolean = true;
+
+  toggleCollapse() {
+    this.isCollapse = !this.isCollapse;
+  }
 
 }
