@@ -24,7 +24,7 @@
   <p>Ringkasan belanja</p>
   <div class="flex items-center space-x-4 font-semibold text-slate-600 mt-2">
     <div class="flex-1">
-      <div class="inline xs:flex space-x-0 xs:space-x-2">
+      <div class="inline xs:flex md:inline lg:flex space-x-0 xs:space-x-2 md:space-x-0 lg:space-x-2">
         <p>{{ price ? 'Total Harga' : 'Harga Produk' }}</p>
         <p>({{ qtyProduct }} {{ price ? 'Barang' : 'Product' }})</p>
       </div>
@@ -36,7 +36,7 @@
   <div *ngIf="qtyInsurance">
     <div class="flex items-center space-x-4 font-semibold text-slate-600 mt-2">
       <div class="flex-1">
-        <div class="inline xs:flex space-x-0 xs:space-x-2">
+        <div class="inline xs:flex md:inline lg:flex space-x-0 xs:space-x-2 md:space-x-0 lg:space-x-2">
           <p>Biaya Proteksi Produk</p>
           <p>({{ qtyInsurance }} Proteksi)</p>
         </div>
