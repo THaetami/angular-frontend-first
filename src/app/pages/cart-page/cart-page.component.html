@@ -59,7 +59,7 @@
                       <div class="justify-center flex space-x-2 items-center text-slate-600">
                         <p class=" justify-end cursor-pointer">Pindahkan ke Wishlist</p>
                         <p>|</p>
-                        <svg (click)="deleteItemFromLocalStorage(product.id)" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <svg (click)="deleteCartItemFromLocalStorage(product.id)" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none">
                           <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M20 5.09h-4.95v-.1A3.025 3.025 0 1 0 9 5v.1H4a1 1 0 0 0 0 2h1v13A1.84 1.84 0 0 0 6.92 22h10.16A1.9 1.9 0 0 0 19 20.09V7.1h1a1 1 0 1 0 0-2v-.01zM11 5a1 1 0 0 1 2 0v.1h-2V5zM7 20V7.1h10V20H7zm3-2a1 1 0 0 0 1-1v-6.9a1 1 0 0 0-2 0V17a1 1 0 0 0 1 1zm4.767-.293A1 1 0 0 1 13.06 17v-6.9a1 1 0 1 1 2 0V17a1 1 0 0 1-.293.707z"
                             fill="#8D96AA" />
@@ -95,50 +95,12 @@
           </div>
         </div>
         <div class="h-full md:h-screen w-full md:w-[40%] lg:w-[30%] font-bold mx-auto mt-4 md:mt-0">
-          <div class="border-2 p-3 rounded-none md:rounded-t-box text-md">
-            <div class="flex items-center space-x-4 border-2 rounded-none md:rounded-box p-1 mb-2">
-              <div class="flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.272 4.046A.65.65 0 0 0 12 4a.73.73 0 0 0-.57.21l-.8.7A5.41 5.41 0 0 1 7.94 6l-1.1.3a.68.68 0 0 0-.7.7L6 8.07a4.66 4.66 0 0 1-1 2.69l-.7.79a.67.67 0 0 0 0 1l.7.79A5 5 0 0 1 6 16l.1 1.12a.68.68 0 0 0 .7.7l1.2.1A4.63 4.63 0 0 1 10.73 19l.8.7a.72.72 0 0 0 1 0l.8-.7a5.37 5.37 0 0 1 2.68-1.08l1.1-.1a.68.68 0 0 0 .69-.7l.1-1.29a4.61 4.61 0 0 1 1.1-2.69l.7-.79a.67.67 0 0 0 0-1l-.7-.79a5.33 5.33 0 0 1-1.11-2.67l-.1-1.09a.68.68 0 0 0-.69-.7L16 6a4.61 4.61 0 0 1-2.7-1.1l-.8-.7a.65.65 0 0 0-.228-.154zM10.2 2.7A2.57 2.57 0 0 1 12 2a2.7 2.7 0 0 1 1.82.7l.8.59a2.57 2.57 0 0 0 1.6.7l1 .1a2.87 2.87 0 0 1 2.59 2.59l.1 1.09a2.87 2.87 0 0 0 .7 1.59l.7.8a2.73 2.73 0 0 1 0 3.58l-.7.8a2.53 2.53 0 0 0-.7 1.59l-.1 1.09a2.87 2.87 0 0 1-2.59 2.59l-1.1.1a2.93 2.93 0 0 0-1.6.7l-.8.69a2.53 2.53 0 0 1-1.79.7 3.12 3.12 0 0 1-1.8-.7l-.79-.69a2.57 2.57 0 0 0-1.6-.7l-1-.1a2.87 2.87 0 0 1-2.59-2.59l-.1-1.09a2.9 2.9 0 0 0-.7-1.59l-.7-.8a2.71 2.71 0 0 1 0-3.58l.7-.8a2.53 2.53 0 0 0 .7-1.59l.1-1.09a2.78 2.78 0 0 1 2.46-2.59l1.1-.1a2.27 2.27 0 0 0 1.6-.6l.89-.69zM8 14.54l6.42-6.37a.82.82 0 0 1 1.16.1.81.81 0 0 1 .1 1.19L9.3 15.83a1.42 1.42 0 0 1-.6.2.858.858 0 0 1-.6-.3.81.81 0 0 1-.1-1.19zm6.42-1.3a1.4 1.4 0 1 0 1.4 1.4 1.308 1.308 0 0 0-1.4-1.4zm-4.302-2.476A1.4 1.4 0 0 1 9.34 11a1.36 1.36 0 0 1-1.4-1.4 1.4 1.4 0 1 1 2.178 1.164z"
-                    fill="#00AA5B" />
-                </svg>
-              </div>
-              <div class="flex-1 min-w-0 p-0">
-                <p>Makin hemat pakai promo</p>
-                <p class="font-normal text-sm">Pilih barang dulu sebelum pakai promo</p>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
-                <g fill="none" fill-rule="evenodd">
-                  <circle cx="24" cy="24" r="24" />
-                  <path stroke="#6c727c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
-                    d="M16.53 27.47l7.202-7.202m-7.202-7.2l7.202 7.203" />
-                </g>
-              </svg>
-            </div>
-          </div>
-          <div class="border-2 p-4 rounded-none md:rounded-b-box text-md">
-            <p>Ringkasan belanja</p>
-            <div class="flex items-center space-x-4 font-semibold text-slate-600 mt-2">
-              <div class="flex-1">
-                <div class="inline xs:flex space-x-0 xs:space-x-2">
-                  <p>Total Harga</p>
-                  <p>({{ selectedQty }} barang)</p>
-                </div>
-              </div>
-              <div class="line-through">{{ selectedTotal }}</div>
-            </div>
-            <hr class="my-3 bottom-2">
-            <div class="flex items-center space-x-4 mt-2">
-              <div class="flex-1">
-                <p>Total Bayar</p>
-              </div>
-              <p>{{ selectedSubtotal }}</p>
-            </div>
-            <div class="flex justify-center mt-3">
-              <button routerLink="/cart/shipment" class="py-3 bg-purple-600 hover:bg-purple-500 hover:text-white w-full rounded-box select-none">Beli</button>
-            </div>
-          </div>
+          <app-card-billing
+            [qtyProduct]="selectedQty || 0"
+            [priceAfterDiscount]="selectedSubtotal || '-'"
+            [price]="selectedTotal || '-'"
+            [submit]="addCheckoutLocalStorage.bind(this)"
+          ></app-card-billing>
         </div>
       </div>
       <ng-template #noProducts class="h-screen">

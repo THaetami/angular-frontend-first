@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { Location } from '@angular/common';
@@ -37,6 +38,7 @@ export class CartPageComponent {
     private location: Location,
     private cartService: CartService,
     private toastr: ToastrService,
+    private router: Router
   ) {
     this.loadDataFromLocalStorage();
   }
@@ -50,7 +52,7 @@ export class CartPageComponent {
   }
 
   loadDataFromLocalStorage() {
-    const storedData = localStorage.getItem('checkoutData');
+    const storedData = localStorage.getItem('cartData');
 
     if (storedData) {
       const existingData = JSON.parse(storedData);
@@ -62,8 +64,8 @@ export class CartPageComponent {
     }
   }
 
-  deleteItemFromLocalStorage(id: number) {
-    const storedData = localStorage.getItem('checkoutData');
+  deleteCartItemFromLocalStorage(id: number) {
+    const storedData = localStorage.getItem('cartData');
 
     if (storedData) {
       const existingData = JSON.parse(storedData);
@@ -77,7 +79,7 @@ export class CartPageComponent {
           existingData.splice(indexToRemove, 1);
 
           // Simpan kembali data yang telah dihapus ke local storage
-          localStorage.setItem('checkoutData', JSON.stringify(existingData));
+          localStorage.setItem('cartData', JSON.stringify(existingData));
 
           this.products.splice(indexToRemove, 1);
           this.cartService.setCartCount(this.products.length);
@@ -123,8 +125,8 @@ export class CartPageComponent {
     }
   }
 
-  updateQtyInLocalStorage(id: number, newQty: number) {
-    const storedData = localStorage.getItem('checkoutData');
+  updateCartDataInLocalStorage(id: number, newQty: number) {
+    const storedData = localStorage.getItem('cartData');
 
     if (storedData) {
         const existingData = JSON.parse(storedData);
@@ -147,13 +149,12 @@ export class CartPageComponent {
                 const totalNumber = priceNumber * newQty;
                 const subtotalNumber = sellingPriceNumber * newQty;
 
-
                 // Update total dan subtotal dalam data produk
                 existingData[indexToUpdate].total = 'Rp. ' + totalNumber.toLocaleString('id-ID');
                 existingData[indexToUpdate].subtotal = 'Rp. ' + subtotalNumber.toLocaleString('id-ID');
 
                 // Simpan kembali data yang telah diupdate ke local storage
-                localStorage.setItem('checkoutData', JSON.stringify(existingData));
+                localStorage.setItem('cartData', JSON.stringify(existingData));
             }
         }
     }
@@ -177,12 +178,11 @@ export class CartPageComponent {
       // Menghitung subtotal berdasarkan qty dan harga jual
       const subtotalNumber = sellingPriceNumber * parseFloat(product.qty.toString());
 
-      // Mengformat ulang total dan subtotal sebagai mata uang Indonesia
+      // Menformat ulang total dan subtotal sebagai mata uang Indonesia
       product.total = 'Rp. ' + totalNumber.toLocaleString('id-ID');
       product.subtotal = 'Rp. ' + subtotalNumber.toLocaleString('id-ID');
 
-      this.updateQtyInLocalStorage(product.id, product.qty);
-
+      this.updateCartDataInLocalStorage(product.id, product.qty);
     }
   }
 
@@ -200,7 +200,7 @@ export class CartPageComponent {
 
         totalSubtotal += subtotalWithoutCurrency;
         total += totalWithoutCurrency;
-        qty += product.qty;
+        qty += Number(product.qty);
       }
     }
 
@@ -215,4 +215,17 @@ export class CartPageComponent {
     this.products.forEach(product => product.checked = isChecked);
     this.countSubtotal(); // Hitung ulang subtotal
   }
+
+  addCheckoutLocalStorage() {
+    if (this.selectedQty > 0) {
+      // Filter produk yang memiliki checked bernilai true
+      const checkedProducts = this.products.filter(product => product.checked && product.qty >= 1);
+
+      // Simpan data produk yang terpilih ke dalam localStorage
+      localStorage.setItem('checkoutData', JSON.stringify(checkedProducts));
+
+      this.router.navigate(['/cart/shipment']);
+    }
+  }
+
 }

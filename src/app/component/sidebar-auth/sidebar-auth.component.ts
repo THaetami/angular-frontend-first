@@ -23,4 +23,8 @@ export class SidebarAuthComponent {
       this.store.dispatch(toggleSidebar());
     });
   }
+
+  resetScrollPosition() {
+    window.scrollTo(0, 0);
+  }
 }

@@ -17,7 +17,8 @@ export class CardProductComponent implements OnInit {
     this.splitItemsIntoGroups();
   }
 
-  constructor() {
+  constructor(
+  ) {
     // membuat data products
     // for (let i = 1; i <= 100; i++) {
     //   const id = i;
@@ -103,6 +104,10 @@ export class CardProductComponent implements OnInit {
         }
       },
     ]
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 
 }

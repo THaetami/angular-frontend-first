@@ -78,10 +78,10 @@ export class CheckoutComponent implements OnInit {
     this.calculatePrice();
   }
 
-  saveToLocalStorage() {
+  addCartLocalStorage() {
     const isNumeric = /^[0-9]+$/.test(this.inputValue.toString());
     if (this.inputValue > 0 && isNumeric) {
-      const storedData = localStorage.getItem('checkoutData');
+      const storedData = localStorage.getItem('cartData');
       let existingData = [];
 
       if (storedData) {
@@ -146,7 +146,7 @@ export class CheckoutComponent implements OnInit {
       }
 
       // Simpan data ke local storage
-      localStorage.setItem('checkoutData', JSON.stringify(existingData));
+      localStorage.setItem('cartData', JSON.stringify(existingData));
       this.cartService.setCartCount(existingData.length);
       this.inputValue = 0;
       this.subtotal = '-';

@@ -25,6 +25,7 @@ export class DetailProductPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+
   ) {
 
   }
@@ -41,4 +42,5 @@ export class DetailProductPageComponent implements OnInit {
       }
     });
  }
+
 }

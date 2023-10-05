@@ -37,6 +37,7 @@ import { NotFoundPageComponent } from './component/not-found-page/not-found-page
 import { ShipmentPageComponent } from './pages/shipment-page/shipment-page.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardBillingComponent } from './component/card-billing/card-billing.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     QRcodeComponent,
     ReviewFeedComponent,
     NotFoundPageComponent,
-    ShipmentPageComponent
+    ShipmentPageComponent,
+    CardBillingComponent
   ],
   imports: [
     BrowserModule,

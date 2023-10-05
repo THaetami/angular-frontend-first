@@ -54,7 +54,7 @@ export class NavbarComponent {
   }
 
   loadDataFromLocalStorage() {
-    const storedData = localStorage.getItem('checkoutData');
+    const storedData = localStorage.getItem('cartData');
 
     if (storedData) {
       const existingData = JSON.parse(storedData);
