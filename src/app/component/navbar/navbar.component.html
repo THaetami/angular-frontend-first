@@ -2,10 +2,10 @@
   <div class="py-2 px-3 flex w-full items-center justify-end md:justify-end ">
     <div class="flex justify-center items-center px-0 lg:px-2 md:mx-auto font-semibold font-heading">
       <ul class="hidden xs:block">
-        <li routerLink="/home" class="py-1 hidden xs:block bg-custom-hover " routerLinkActive="bg-link-active rounded-md text-black"><a
-            class="p-2 md:px-1 lg:px-3 xl:px-6">Home</a></li>
-        <li class="py-1 hidden xs:block" routerLinkActive="bg-link-active rounded-md text-black"><a routerLink="/about"
-            class="p-2 md:px-1 lg:px-3 xl:px-6">About</a></li>
+        <li routerLink="/home" class="py-1 hidden xs:block bg-custom-hover " routerLinkActive="bg-link-active rounded-md text-black"><span
+            class="p-2 md:px-1 lg:px-3 xl:px-6">Home</span></li>
+        <li class="py-1 hidden xs:block" routerLinkActive="bg-link-active rounded-md text-black"><span routerLink="/about"
+            class="p-2 md:px-1 lg:px-3 xl:px-6">About</span></li>
         <li class="py-1 hidden xs:block" routerLinkActive="bg-link-active rounded-md text-black"><span
             class="p-2 md:px-1 lg:px-3 xl:px-6 cursor-no-drop">Service</span></li>
         <li class="py-1 hidden xs:block" routerLinkActive="bg-link-active rounded-md text-black"><span
@@ -56,7 +56,7 @@
           class="menu outline-none dropdown-content rounded-md overflow-auto z-[1] max-h-60 p-2 hidden xs:block shadow-lg bg-base-100 w-96 mt-0 -mr-2">
           <div *ngIf="cart > 0" class="flex items-center border-b-2 py-2">
             <p class="flex-1 font-bold text-black">Keranjang ({{ cart }})</p>
-            <a routerLink="/cart" class="hover:underline text-purple-600 cursor-pointer">Lihat selengkapnya</a>
+            <span routerLink="/cart" class="hover:underline text-purple-600 cursor-pointer">Lihat selengkapnya</span>
           </div>
           <ng-container *ngIf="!cart">
             <div  class="flex justify-center items-center mx-auto mt-4">
